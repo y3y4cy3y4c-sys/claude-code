@@ -126,7 +126,7 @@ R += 1
 
 ws.row_dimensions[R].height = 14
 merge_w(R, 2, 11,
-        "Base Year: 2026  |  All figures in $mm USD  |  Supports: Colocation (CIFR/WULF) & AI Cloud (IREN)",
+        "CIFR (Cipher Digital) — 3 Signed Projects + 3 Pipeline Sites  |  Base Year: 2026  |  All figures in $mm USD",
         bg=C_BLUE, fg=C_WHITE, size=9, italic=True)
 fill_row(R, 1, 11, C_BLUE)
 R += 1
@@ -499,83 +499,83 @@ for col in PROJECT_COLS:
 # ─────────────────────────────────────────────────────────────────────────────
 
 PROJECTS_DATA = [
-    # Col D: CIFR Barber Lake
+    # Col D: CIFR Barber Lake — signed 10-yr NNN, Fluidstack/Google, $3.83B total
     {
-        "type": "Colo", "company": "CIFR", "name": "Barber Lake",
-        "status": "Under construction; Phase I Sept 2026",
-        "mw": 300, "rev_pw": 1.65, "arr": None, "util": 1.0,
+        "type": "Colo", "company": "CIFR", "name": "Barber Lake (Fluidstack)",
+        "status": "Signed 10-yr NNN; Fluidstack/Google-backed; Phase I Sep 2026 → full ramp Jan 2027",
+        "mw": 207, "rev_pw": None, "arr": 383, "util": 1.0,   # $3.83B / 10yr
         "noi_margin": 0.85,
         "power": None, "dc_opex": None, "sw": None, "interest": None,
-        "cod": 2027, "term": 15, "disc": 0.10,
-        "capex": 450, "ltc": 0.85, "debt": 382.5,
+        "cod": 2027, "term": 10, "disc": 0.10,
+        "capex": 400, "ltc": 0.85, "debt": 340,
         "gpu_life": None, "repl_pct": None,
-        "ext_yrs": 5, "ext_haircut": 0.90, "prob_ext": 0.60,
-        "prob_sign": 1.0, "prob_cod": 0.85,
+        "ext_yrs": 5, "ext_haircut": 0.90, "prob_ext": 0.65,
+        "prob_sign": 1.0, "prob_cod": 0.90,
     },
-    # Col E: CIFR Black Pearl
+    # Col E: CIFR Black Pearl — signed 15-yr NNN, Amazon Data Services, $5.5B total
     {
         "type": "Colo", "company": "CIFR", "name": "Black Pearl (AWS)",
-        "status": "Under construction; AWS 15-yr lease; Phase I Q4 2026",
-        "mw": 300, "rev_pw": 1.65, "arr": None, "util": 1.0,
+        "status": "Signed 15-yr NNN; Amazon Data Services; Phase I Q4 2026 → full ramp Q1 2027",
+        "mw": 216, "rev_pw": None, "arr": 367, "util": 1.0,   # $5.5B / 15yr
         "noi_margin": 0.85,
         "power": None, "dc_opex": None, "sw": None, "interest": None,
         "cod": 2027, "term": 15, "disc": 0.10,
-        "capex": 450, "ltc": 0.85, "debt": 382.5,
+        "capex": 430, "ltc": 0.85, "debt": 365,
         "gpu_life": None, "repl_pct": None,
-        "ext_yrs": 5, "ext_haircut": 0.90, "prob_ext": 0.60,
-        "prob_sign": 1.0, "prob_cod": 0.85,
+        "ext_yrs": 5, "ext_haircut": 0.90, "prob_ext": 0.65,
+        "prob_sign": 1.0, "prob_cod": 0.90,
     },
-    # Col F: WULF Lake Mariner
+    # Col F: CIFR Stingray — signed long-term NNN, Amazon Data Services, $2.06B total
     {
-        "type": "Colo", "company": "WULF", "name": "Lake Mariner (Core42)",
-        "status": "Operational — 60 MW live",
-        "mw": 60, "rev_pw": 1.65, "arr": None, "util": 1.0,
+        "type": "Colo", "company": "CIFR", "name": "Stingray (AWS)",
+        "status": "Signed long-term NNN; Amazon Data Services; earthwork+substation Q1 2026; H1 2026 COD",
+        "mw": 70, "rev_pw": None, "arr": 137, "util": 1.0,    # ~$2.06B / 15yr
         "noi_margin": 0.85,
         "power": None, "dc_opex": None, "sw": None, "interest": None,
         "cod": 2026, "term": 15, "disc": 0.10,
-        "capex": 0, "ltc": 0.85, "debt": 0,
+        "capex": 953, "ltc": 0.85, "debt": 810,               # $810M project financing = debt
         "gpu_life": None, "repl_pct": None,
-        "ext_yrs": 5, "ext_haircut": 0.90, "prob_ext": 0.60,
-        "prob_sign": 1.0, "prob_cod": 1.0,
+        "ext_yrs": 5, "ext_haircut": 0.90, "prob_ext": 0.65,
+        "prob_sign": 1.0, "prob_cod": 0.92,
     },
-    # Col G: WULF Abernathy
+    # Col G: CIFR Colchis — pipeline, 1 GW site, West Texas, AEP dual interconnect
     {
-        "type": "Colo", "company": "WULF", "name": "Abernathy JV",
-        "status": "Under construction; Fluidstack/Google; 25-yr lease",
-        "mw": 168, "rev_pw": 1.65, "arr": None, "util": 1.0,
+        "type": "Colo", "company": "CIFR", "name": "Colchis (W. Texas)",
+        "status": "Pipeline; 1 GW site; majority JV stake; AEP dual interconnect executed; no lease signed",
+        "mw": 500, "rev_pw": 1.50, "arr": None, "util": 1.0,  # Phase 1 ~500 MW estimate
         "noi_margin": 0.85,
         "power": None, "dc_opex": None, "sw": None, "interest": None,
-        "cod": 2027, "term": 25, "disc": 0.10,
-        "capex": 252, "ltc": 0.85, "debt": 214.2,
+        "cod": 2029, "term": 15, "disc": 0.10,
+        "capex": 750, "ltc": 0.80, "debt": 600,
         "gpu_life": None, "repl_pct": None,
-        "ext_yrs": 0, "ext_haircut": 0.90, "prob_ext": 0.0,
-        "prob_sign": 1.0, "prob_cod": 0.80,
+        "ext_yrs": 5, "ext_haircut": 0.85, "prob_ext": 0.55,
+        "prob_sign": 0.35, "prob_cod": 0.75,
     },
-    # Col H: IREN NVIDIA
+    # Col H: CIFR Ulysses — pipeline, Ohio, 200 MW, AEP Ohio / future PJM
     {
-        "type": "Cloud", "company": "IREN", "name": "NVIDIA Blackwell Contract",
-        "status": "Signed; 20% prepayment received; ramp early 2027",
-        "mw": None, "rev_pw": None, "arr": 1900, "util": 0.90,
-        "noi_margin": 0.82,
-        "power": 180, "dc_opex": 80, "sw": 40, "interest": 84,
-        "cod": 2027, "term": 5, "disc": 0.12,
-        "capex": 2000, "ltc": 0.60, "debt": 1200,
-        "gpu_life": 4, "repl_pct": 0.80,
-        "ext_yrs": 3, "ext_haircut": 0.75, "prob_ext": 0.50,
-        "prob_sign": 1.0, "prob_cod": 0.85,
+        "type": "Colo", "company": "CIFR", "name": "Ulysses (Ohio)",
+        "status": "Pipeline; site acquired Dec 2025; AEP Ohio / future PJM; Q4 2027 est.",
+        "mw": 200, "rev_pw": 1.50, "arr": None, "util": 1.0,
+        "noi_margin": 0.85,
+        "power": None, "dc_opex": None, "sw": None, "interest": None,
+        "cod": 2028, "term": 15, "disc": 0.10,
+        "capex": 300, "ltc": 0.80, "debt": 240,
+        "gpu_life": None, "repl_pct": None,
+        "ext_yrs": 5, "ext_haircut": 0.85, "prob_ext": 0.55,
+        "prob_sign": 0.40, "prob_cod": 0.78,
     },
-    # Col I: IREN Microsoft
+    # Col I: CIFR McLennan — pipeline, Central Texas, 500 MW, ERCOT queue
     {
-        "type": "Cloud", "company": "IREN", "name": "Microsoft AI Contract",
-        "status": "Signed; $9.7B total / 5yr; GB300 NVL72",
-        "mw": None, "rev_pw": None, "arr": 1940, "util": 0.90,
-        "noi_margin": 0.79,
-        "power": 220, "dc_opex": 100, "sw": 50, "interest": 105,
-        "cod": 2026, "term": 5, "disc": 0.12,
-        "capex": 2500, "ltc": 0.60, "debt": 1500,
-        "gpu_life": 4, "repl_pct": 0.80,
-        "ext_yrs": 3, "ext_haircut": 0.75, "prob_ext": 0.50,
-        "prob_sign": 1.0, "prob_cod": 0.90,
+        "type": "Colo", "company": "CIFR", "name": "McLennan (Central TX)",
+        "status": "Pipeline; option exercised Feb 2026; ERCOT interconnect queue; est. 2028",
+        "mw": 500, "rev_pw": 1.50, "arr": None, "util": 1.0,
+        "noi_margin": 0.85,
+        "power": None, "dc_opex": None, "sw": None, "interest": None,
+        "cod": 2028, "term": 15, "disc": 0.10,
+        "capex": 750, "ltc": 0.80, "debt": 600,
+        "gpu_life": None, "repl_pct": None,
+        "ext_yrs": 5, "ext_haircut": 0.85, "prob_ext": 0.55,
+        "prob_sign": 0.35, "prob_cod": 0.75,
     },
 ]
 
