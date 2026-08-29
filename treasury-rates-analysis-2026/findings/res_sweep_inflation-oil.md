@@ -1,0 +1,133 @@
+# inflation-oil
+
+## SUMMARY
+Summer 2026 US inflation was dominated by the Iran war oil shock. The war began Feb 28, 2026 (US-Israel strikes, assassination of Khamenei); on March 2 the IRGC closed the Strait of Hormuz (~13 mb/d, one-fifth of global oil), sending Brent futures to ~$118-120 in March (physical cargoes $130-150) despite a record 400-million-barrel IEA/SPR release. An April 7-8 ceasefire and a June 14 memorandum to end the war within 60 days brought oil back to near pre-war levels by late June: WTI settled $69.23 on June 26 and Brent $73.21 on June 29, versus a May peak above $110. A late-June weekend of tit-for-tat strikes (drone hit on the tanker M/T Kiku; US strikes on 10 Iranian targets; Iranian missiles at Bahrain/Kuwait) only briefly lifted prices before Doha talks resumed. Escalation returned in July: after Iran struck vessels bypassing its pre-approved route, US strikes on July 8 pushed Brent +3% above $76, and on July 23 — after a tanker was hit off Saudi Arabia and Trump threatened to bomb Iranian infrastructure — Brent futures surged 7% to $100.69 (spot as high as $105, per EIA) and WTI +6% to $92.19. Deal optimism then knocked Brent to $79.15 by Aug 5; the 60-day memorandum expired Aug 17 unrenewed, fresh Iranian attacks on shipping drove Brent from $88.31 (Aug 17) to $94.39 (Aug 21), before easing fears took Brent back to ~$88 by Aug 25-28 (WTI $83.90).
+
+Inflation prints traced the energy swing. May CPI peaked at 4.2% y/y (3-year high; energy +3.9% m/m, +23.5% y/y) with core at 2.9%. June CPI (released July 14) undershot: -0.4% m/m — the biggest monthly drop since April 2020 — and 3.5% y/y vs 3.8% expected; core flat m/m at 2.6%. July CPI (Aug 12) was in line: +0.1% m/m, 3.4% y/y; core +0.2% m/m, 2.5% y/y. July PCE (Aug 26) was slightly hot: headline 3.7% (vs 3.6% expected), core 3.3% (vs 3.2%). Tariff pass-through, per Fed/St. Louis Fed work, stabilized after February; since March excess inflation has been energy-driven, though furnishings (+1.0% m/m in June) still showed duty effects. Gasoline averaged $4.05 in June, dipped to $3.91 (June 25), jumped 15 cents to $4.09 by July 23, and August set a record as the most expensive August ever ($4.06 average; $4.09 on Aug 27).
+
+On the key question: the shock moved short-run household expectations a lot but long-run/market expectations barely. Michigan 1-year expectations jumped from 3.4% pre-war (Feb) to 4.8% (May), easing to 4.2-4.3% by July/August; 5-10-year expectations spiked to 3.9% in May but fell back to 3.3% and stayed there. NY Fed 1-year was just 3.6% in July; 5-year 3.0%. Market-based measures were essentially unmoved: 10-year breakeven ~2.25-2.28%, 5-year 2.28%, 5y5y forward 2.27% in August. The repricing showed up instead in policy and nominal rates: 10-year Treasury rose from a 4.44% weekly average end-June to briefly above 4.7% on July 23 (highest since Jan 2025; 4.68% Aug 27), September hike odds jumped to 80%+ from 52% in a week, and the Warsh Fed held at 3.50-3.75% on July 29 with three dissents for a hike — the first triple same-direction dissent since 2016. Verdict: mostly headlines and near-term Fed-path repricing; long-run expectations stayed anchored.
+
+## DATA POINTS
+- May 2026 CPI headline y/y (3-year high; released Jun 10) = 4.2% (2026-05-31) [CNBC / CBS News]
+- May 2026 core CPI y/y = 2.9% (+0.2% m/m) (2026-05-31) [CBS News / verifiedinvesting.com]
+- May 2026 CPI energy index = +3.9% m/m, +23.5% y/y (2026-05-31) [EasCorp / BLS via edgeconsultancykw.com]
+- June 2026 CPI headline y/y, actual vs expected (released Jul 14) = 3.5% vs 3.8% consensus (2026-06-30) [financecalendar.com / CNBC]
+- June 2026 CPI headline m/m = -0.4% SA (largest monthly decline since April 2020) (2026-06-30) [CNBC / TD Economics]
+- June 2026 core CPI = 0.0% m/m, 2.6% y/y (softer than forecast) (2026-06-30) [CNBC / EY]
+- July 2026 CPI headline, actual vs expected (released Aug 12) = +0.1% m/m, 3.4% y/y (in line with Dow Jones consensus) (2026-07-31) [CNBC]
+- July 2026 core CPI = +0.2% m/m, 2.5% y/y (down from 2.6%) (2026-07-31) [CNBC / EY]
+- July 2026 headline PCE y/y, actual vs expected (released Aug 26) = 3.7% vs 3.6% expected (unchanged from June; peaked at 3-yr high in May) (2026-07-31) [CBS News]
+- July 2026 core PCE y/y, actual vs expected = 3.3% vs 3.2% expected (2026-07-31) [CNBC / CBS News]
+- Tariff pass-through: household furnishings CPI = +1.0% m/m (biggest jump since 2022) (2026-06-30) [emarketer / CPI reports]
+- Tariff pass-through: apparel CPI = +0.1% m/m in July after June decline (vs +1.3% m/m in Feb) (2026-07-31) [EY / RBC Economics]
+- Tariff effect on inflation = Stabilized since Feb 2026; since March excess inflation mainly energy-driven, not tariffs (2026-08-15) [St. Louis Fed / Minneapolis Fed]
+- Iran war start (US-Israel airstrikes, Khamenei assassinated) = War began (2026-02-28) [Britannica / Wikipedia 2026 Iran war]
+- Strait of Hormuz closure by IRGC (~13 mb/d, ~20% of global oil) = Closed to US/Israel-allied shipping (2026-03-02) [militaryspend.org / Wikipedia 2026 Strait of Hormuz crisis]
+- SPR/IEA release = US 172M bbl of coordinated IEA 400M bbl release (2026-03-12) [PBS / newsonair.gov.in]
+- Brent futures peak (March, post-closure) = ~$118-120/bbl (physical cargoes ~$130-150) (2026-03-15) [militaryspend.org Hormuz tracker]
+- US-Iran ceasefire (conditional on Hormuz reopening) = Agreed April 7-8 (2026-04-08) [Britannica / House of Commons Library]
+- Brent May 2026 peak = above $110/bbl (2026-05-15) [Al Jazeera (late-Aug retrospective)]
+- Hormuz memorandum of understanding (end war within 60 days) = Signed June 14 (2026-06-14) [Wikipedia 2026 Iran war ceasefire]
+- Brent crude close = $95.05 (2026-06-01) [Capital.com / Yahoo Finance]
+- WTI settle (fell below $70 as tankers exited Hormuz) = $69.23 (-3.74%) (2026-06-26) [CNBC]
+- Brent crude close = $73.21 (2026-06-29) [Capital.com]
+- WTI settle after US-Iran halt-hostilities deal (post M/T Kiku strike weekend: US hit 10 Iranian targets, Iran hit Bahrain/Kuwait) = $70.56 (+1.9%) (2026-06-29) [CNBC / Al Jazeera]
+- Brent crude (9am ET) = $75.02 (2026-06-30) [Fortune]
+- Brent after US strikes Iran (Iran had struck 3 vessels off pre-approved route) = +3% to above $76 (2026-07-08) [Al Jazeera]
+- Brent futures settle (tanker struck off Saudi Arabia; Trump bomb threat) = $100.69 (+7%); EIA: spot as high as $105 (2026-07-23) [CNBC / EIA STEO]
+- WTI futures settle = $92.19 (+6%) (2026-07-23) [CNBC]
+- Brent (deal optimism, Trump said deal possible by Aug 5) = $83.51 (2026-08-03) [The National]
+- Brent = $79.15 (-0.3%) (2026-08-05) [Transport Topics / Euronews]
+- Brent / WTI (60-day memorandum expired without extension) = $88.31 / $82.35 (2026-08-17) [Eastern Herald / polyestertime]
+- Brent / WTI close (fresh Iranian attacks on vessels; +5% on week) = $94.39 / $87.06 (2026-08-21) [CNBC]
+- Brent / WTI (Hormuz fighting fears eased) = Brent -4% to below $89; WTI just over $82 (2026-08-24) [Bloomberg / CNBC]
+- Brent / WTI settle = $88.24 / $83.90 (2026-08-25) [Fortune / FRED]
+- Brent (late-August level; SPR below 300M bbl) = ~$88 (2026-08-28) [tradingeconomics / Yahoo Finance]
+- AAA national average regular gasoline = $3.99 (first sub-$4 since Mar 30) (2026-06-18) [AAA gasprices.aaa.com]
+- AAA national average gasoline = $3.91 (June monthly avg $4.05) (2026-06-25) [AAA Newsroom]
+- AAA national average gasoline = $3.94 (2026-07-16) [AAA Newsroom]
+- AAA national average gasoline (jumped 15 cents in a week) = $4.09 (2026-07-23) [AAA Newsroom]
+- AAA national average gasoline (August avg $4.06 — record most expensive August, every day above $4) = $4.09 (2026-08-27) [AAA gasprices.aaa.com]
+- Michigan 1-yr inflation expectations (pre-war baseline) = 3.4% (2026-02-28) [U. Michigan via neilsethi.substack / Yahoo Finance]
+- Michigan 1-yr / 5-10yr inflation expectations (May final, peak) = 4.8% / 3.9% (2026-05-29) [U. Michigan via neilsethi.substack]
+- Michigan 1-yr / 5-10yr inflation expectations (June final) = 4.6% / 3.3% (2026-06-26) [U. Michigan via neilsethi.substack]
+- Michigan 1-yr / 5-10yr inflation expectations (July final; sentiment 55.2) = 4.2% / 3.3% (2026-07-31) [U. Michigan / Advisor Perspectives]
+- Michigan 1-yr / 5-10yr inflation expectations (Aug prelim; sentiment fell to 51.0) = 4.3% / 3.3% (2026-08-14) [U. Michigan / Yahoo Finance]
+- NY Fed SCE 1-yr / 3-yr inflation expectations (June) = 3.7% (+0.2pp) / 3.3% (2026-06-30) [NY Fed via Bloomberg / Marketplace]
+- NY Fed SCE 1-yr / 3-yr / 5-yr inflation expectations (July) = 3.6% / 3.3% / 3.0% (2026-07-31) [NY Fed SCE]
+- 10-year TIPS breakeven = 2.28% (2026-07-23) [FRED T10YIE via convextrade]
+- 10-yr / 5-yr / 5y5y-forward breakevens (stable in 2.0-2.6% range through shock) = 2.25% / 2.28% / 2.27% (2026-08-25) [FRED / tradingeconomics]
+- 10-year Treasury yield (weekly avg, end-June) = 4.44% (2026-06-30) [Advisor Perspectives (dshort)]
+- 10-year Treasury yield (briefly topped, highest since Jan 2025); 2-yr 4.37% = >4.70% (2026-07-23) [CNBC]
+- 10-year Treasury yield = 4.68% (Aug 27), ~4.66% (Aug 28) (2026-08-28) [Advisor Perspectives / tradingeconomics]
+- Fed funds futures odds of September hike (up from 52% a week earlier) = >80% (2026-07-23) [CNBC / CME FedWatch]
+- FOMC decision (Chair Kevin Warsh): held rate, 9-3 vote; Hammack, Kashkari, Logan dissented for +25bp — first 3-way same-direction dissent since Sep 2016 = 3.50%-3.75% target range (2026-07-29) [CNBC / Federal Reserve]
+- July 2026 nonfarm payrolls (released early Aug) = -23,000 (2026-07-31) [techtimes Jackson Hole preview]
+- Jackson Hole symposium; Warsh keynote Friday Aug 28 = Began Aug 27 (2026-08-27) [REX Shares / techtimes]
+
+## SOURCES
+- https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html
+- https://www.cbsnews.com/news/cpi-report-today-may-2026-inflation-iran-war-trump/
+- https://www.financecalendar.com/event/us-cpi-report-july-2026/
+- https://www.cnbc.com/2026/08/12/cpi-inflation-report-july-2026.html
+- https://www.ey.com/en_us/insights/strategy/macroeconomics/cpi-report
+- https://economics.td.com/us-cpi
+- https://www.cbsnews.com/news/july-pce-inflation-index-federal-reserve/
+- https://www.cnbc.com/2026/08/26/feds-preferred-inflation-gauge-shows-core-prices-rose-3point3percent-annually-in-july.html
+- https://www.stlouisfed.org/on-the-economy/2026/aug/tariff-effects-inflation-stabilize-recent-months
+- https://www.minneapolisfed.org/article/2026/tariffs-cant-explain-rising-goods-inflation
+- https://www.federalreserve.gov/econres/notes/feds-notes/the-slow-climb-how-tariffs-gradually-raised-retail-prices-in-2025-20260305.html
+- https://www.emarketer.com/content/june-cpi-tariff-impact-inflation-consumer-prices
+- https://www.britannica.com/event/2026-Iran-war
+- https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis
+- https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire
+- https://commonslibrary.parliament.uk/research-briefings/cbp-10636/
+- https://militaryspend.org/strait-of-hormuz
+- https://www.pbs.org/newshour/politics/u-s-to-release-172-million-barrels-of-oil-from-strategic-petroleum-reserve-as-prices-surge
+- https://www.cnbc.com/2026/06/26/oil-prices-middle-east-iran-strait-of-hormuz-opec-iraq-wti-brent-crude.html
+- https://www.cnbc.com/2026/06/29/oil-prices-wti-brent-crude-us-iran-strikes-strait-hormuz-talks.html
+- https://www.aljazeera.com/economy/2026/6/29/oil-prices-rise-as-us-iranian-strikes-threaten-strait-of-hormuz-reopening
+- https://fortune.com/article/price-of-oil-06-30-2026/
+- https://capital.com/en-int/market-updates/oil-price-forecast-30-06-2026
+- https://www.aljazeera.com/news/2026/7/8/oil-prices-surge-as-us-strikes-iran-reversing-fall-to-pre-war-levels
+- https://www.cnbc.com/2026/07/23/brent-crude-tops-100-a-barrel-how-the-next-stop-could-be-120.html
+- https://www.cnbc.com/2026/07/23/treasury-yields-oil-prices-jobless-claims.html
+- https://www.cnbc.com/2026/07/23/fed-interest-rate-odds-oil-jobless-claims.html
+- https://www.eia.gov/outlooks/steo/report/global_oil.php
+- https://www.cnbc.com/2026/07/28/oil-price-today-wti-brent-us-iran-hormuz.html
+- https://www.cnbc.com/2026/07/30/oil-prices-us-iran-war.html
+- https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html
+- https://www.thenationalnews.com/business/energy/2026/08/03/oil-prices-slump-on-potential-us-iran-deal-to-open-strait-of-hormuz/
+- https://www.cnbc.com/2026/08/10/oil-prices-today-brent-wti-hormuz-trump-iran.html
+- https://www.cnbc.com/2026/08/11/hormuz-oil-prices-us-iran.html
+- https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening
+- https://easternherald.com/2026/08/17/oil-prices-today-august-17-2026/
+- https://www.cnbc.com/2026/08/18/daily-open-oil-yields-volatility-iran-war.html
+- https://www.cnbc.com/2026/08/21/oil-prices-us-iran.html
+- https://www.cnbc.com/2026/08/24/oil-price-today-wti-brent-us-sanctions-iran.html
+- https://fortune.com/article/price-of-oil-08-25-2026/
+- https://newsroom.aaa.com/2026/06/national-average-drops-below-4-gallon-as-summer-travel-heats-up/
+- https://newsroom.aaa.com/2026/07/gas-prices-keep-climbing-national-average-jumps-15-cents/
+- https://gasprices.aaa.com/gas-prices-remain-high-as-august-will-likely-set-new-record/
+- https://newsroom.aaa.com/2026/08/after-falling-for-a-week-national-average-climbing-again/
+- https://neilsethi.substack.com/p/university-of-michigan-survey-of-75f
+- https://neilsethi.substack.com/p/university-of-michigan-survey-of-28b
+- https://neilsethi.substack.com/p/university-of-michigan-survey-of-0e4
+- https://finance.yahoo.com/economy/articles/u-consumer-sentiment-falls-august-171815784.html
+- https://www.bloomberg.com/news/articles/2026-07-07/us-consumers-inflation-expectations-rose-in-june-ny-fed-survey
+- https://cryptobriefing.com/ny-fed-july-inflation-expectations/
+- https://fred.stlouisfed.org/series/T10YIE
+- https://fred.stlouisfed.org/series/T5YIFR
+- https://tradingeconomics.com/united-states/5-year-breakeven-inflation-rate-fed-data.html
+- https://tradingeconomics.com/united-states/10-year-breakeven-inflation-rate-fed-data.html
+- https://convextrade.com/metrics/t10yie
+- https://www.advisorperspectives.com/dshort/updates/2026/07/01/10-year-treasury-yield-long-term-perspective-june-2026
+- https://www.advisorperspectives.com/commentaries/2026/08/27/higher-oil-prices-inflation-concerns-weigh-bonds-stocks
+- https://finance.yahoo.com/markets/article/bond-yields-rise-as-elevated-oil-prices-reignite-threat-of-renewed-pressure-on-inflation-162442976.html
+- https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html
+- https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm
+- https://finance.yahoo.com/economy/live/fed-meeting-live-federal-reserve-july-interest-rate-decision-141813444.html
+- https://www.techtimes.com/articles/325228/20260821/jackson-hole-2026-what-watch-when-warsh-steps-podium-friday.htm
+- https://www.rexshares.com/jackson-hole-explained/
+- https://finance.yahoo.com/markets/article/oil-jumps-as-us-iran-deal-hopes-fade-strategic-petroleum-reserve-falls-below-300-million-barrels-172208297.html
+- https://www.frbsf.org/research-and-insights/publications/economic-letter/2026/08/financial-markets-oil-prices-and-supply-side-risks/

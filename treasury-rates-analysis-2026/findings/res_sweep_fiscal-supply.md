@@ -1,0 +1,86 @@
+# fiscal-supply
+
+## SUMMARY
+The July 2026 Monthly Treasury Statement (released Aug 12) confirmed a $432.2 billion monthly deficit — receipts $334.0B vs outlays $766.3B — up ~48% ($141B) from July 2025 and the largest monthly deficit since March 2021, though ~$99B of outlays reflected August benefits prepaid because Aug 1 fell on a weekend. FY2026 through 10 months: deficit ~$1.80T, $170B (10%) above FY2025's $1.63T pace (revenues $4.5T, outlays $6.3T); CRFB puts the calendar-adjusted gap ~5% wider. A defining fiscal shock this summer is tariffs running in reverse: after the Supreme Court's Feb 20, 2026 ruling striking down IEEPA tariffs, Treasury paid ~$100B of $166B eligible refunds; July net customs receipts were NEGATIVE $8.55B (collections $24.8B vs refunds $33.4B), the third straight negative month. CBO's August Monthly Budget Review raised its FY2026 deficit projection to ~$2.1T from $1.9T (February), with 2026 tariff collections ~$250B (60%) below prior projections and trade-policy changes adding ~$0.9T to 2027–36 deficits. The 2025 tax law (OBBBA) adds ~$4.1–4.7T to deficits over a decade (~$500B to FY2026 alone including interest). Gross federal debt crossed $40.05T on Aug 18, months earlier than forecast. The debt ceiling is NOT currently binding — OBBBA raised it $5T to $41.1T in July 2025 — but analysts now see it binding by early 2027. On supply: Treasury's Aug 3 estimate raised Jul–Sep privately-held net marketable borrowing to $739B (+$68B vs May) with $628B for Oct–Dec; the Aug 5 refunding held the package at $125B ($58B 3y, $42B 10y, $25B 30y) and pledged steady nominal coupon/FRN sizes "for at least the next several quarters," pushing incremental financing into bills (dealers expect coupon increases in early 2027). Auction evidence of long-end strain: the Jul 9 30y reopening cleared at 5.058% (highest since 2007, b/c 2.44); the Jul 22 $13B 20y reopening tailed 0.5bp at 5.163% with elevated dealer takedown (14.7%) and weak directs (10.2%) — graded D+; the Aug 13 new 30y cleared at 5.216%, the costliest 30y funding since 2001, with b/c slipping to 2.39 (indirects a solid 66.8%); the Aug 19 $18B 20y tailed 0.5bp at 5.204% with b/c 2.53 vs 2.66 average and above-average dealer takedown. By contrast the belly held up (Aug 12 $42B 10y: 4.683%, b/c 2.53 vs 2.47 avg, indirects 76.7%; Aug 26 $70B 5y slightly above-average demand) — a fiscal/term-premium story concentrated at the long end. The 30y yield rose from 4.91% (Jun 30) to 5.33% (Aug 18, 19-year high) before easing to ~5.20% by Aug 27 — helped by Treasury's Aug 19 announcement doubling long-end liquidity-support buybacks (from $2B to at least $4B per operation in the 10–20y and 20–30y sectors, effective Sep 9). Verdict: fiscal/supply worry is a genuine driver of the long-end selloff — CNBC, Bloomberg and strategists explicitly cite deficit deterioration, the tariff-refund revenue hole, the $40T milestone and rising term premium, and Treasury's emergency-style buyback expansion is itself evidence officials saw long-end demand fragility — but the evidence is of chronically soft, tailing long-bond auctions and rising risk premia rather than failed auctions, and near-term coupon supply was deliberately held flat, with inflation above target a co-driver.
+
+## DATA POINTS
+- July 2026 monthly federal budget deficit = $432.2 billion (receipts $334.0B, outlays $766.3B); largest monthly deficit since March 2021; +~48% / +$141B vs July 2025; outlays inflated ~$99B by Aug benefit prepayment (2026-07-31) [Treasury Monthly Treasury Statement via CNBC (Aug 12, 2026), Yahoo Finance, Arkansas Democrat-Gazette, Bloomberg]
+- FY2026 deficit, first 10 months (Oct 2025–Jul 2026) = ~$1.80 trillion; $170B (10%) above FY2025's ~$1.63T for same period; revenues $4.5T, outlays $6.3T; ~5% wider after calendar adjustment (2026-07-31) [CRFB press release / Treasury MTS (Aug 12, 2026)]
+- July 2026 net customs receipts = -$8.55 billion (collections $24.8B vs tariff refunds $33.38B); third consecutive month of negative net tariff receipts (2026-07-31) [Treasury MTS via Yahoo Finance, btimesonline (Aug 13, 2026)]
+- IEEPA tariff refunds paid to date = ~$100 billion of $166 billion eligible refunds paid (total repayments >$100B since Feb 20, 2026 Supreme Court ruling) (2026-08-12) [AAF Debt and Deficit Progress Report; btimesonline; Washington Times]
+- FY2026 customs duties, first 10 months, y/y change = +$19 billion (+14%) vs FY2025 despite May–July refund outflows (2026-07-31) [CBO Monthly Budget Review July 2026 / AAF]
+- CBO FY2026 deficit projection (August update) = ~$2.1 trillion, up from $1.9T February projection; revenues ~$200B below February forecast, mostly tariffs (2026-08-10) [CBO Monthly Budget Review (August 2026) via The Hill, Fortune]
+- CBO estimate of tariff-ruling revenue loss = 2026 tariff/customs collections ~$250B (60%) below prior projection; trade-policy changes through Jul 31, 2026 add ~$0.9T to 2027–36 deficits vs Feb baseline (2026-07-31) [CBO 'Updated Budgetary Projections of Tariffs as of July 31, 2026' (publication 62704); Washington Times]
+- OBBBA (2025 tax law) deficit cost = $4.1T over 2025–34 conventional (incl. $718B interest); CBO later: $3.7T primary 2026–35 + $0.9T debt service = $4.7T; ~$500B added to FY2026 deficit incl. interest (2026-03-11) [CBO via AAF, CRFB, Washington Examiner]
+- Gross national debt = $40.05 trillion (crossed $40T, months earlier than expected; $39T→$40T in ~5 months) (2026-08-18) [Treasury daily statement via CBS News, Washington Post, CNN, House Budget Committee]
+- Debt ceiling status = Not binding: raised $5T to $41.1T by OBBBA (signed Jul 4, 2025); analysts now project it binds by early 2027 (accelerated from mid/late 2027) (2026-08-18) [CRFB Debt Ceiling Q&A; Detroit News/Washington Post (Aug 18, 2026)]
+- Treasury Q3 (Jul–Sep 2026) borrowing estimate = $739 billion privately-held net marketable debt (+$68B vs May estimate), end-Sep cash $950B; Q4 (Oct–Dec) estimate $628B, end-Dec cash $850B (2026-08-03) [Treasury press release sb0584 via Reuters/Yahoo Finance]
+- August 2026 quarterly refunding package = $125B total: $58B 3-year (Aug 11), $42B 10-year (Aug 12), $25B 30-year (Aug 13); raises ~$28.7B new cash vs $96.3B maturing; nominal coupon & FRN auction sizes held steady 'at least the next several quarters'; incremental financing via bills; all dealers expected no coupon changes, first increases expected early 2027 (2026-08-05) [Treasury Quarterly Refunding Statement (sb0590); Reuters/Yahoo; tradersunion; DataTrack]
+- 30-year bond reopening auction high yield = 5.058% — highest since 2007; bid-to-cover 2.44; demand better than feared (2026-07-09) [Bloomberg (Jul 9, 2026); Bloomberg Aug 13 comparison]
+- 20-year bond reopening auction ($13B) = High yield 5.163% vs 5.158% WI (0.5bp tail); bid-to-cover 2.64 vs 2.66 avg; directs 10.21% vs 23.9% avg; dealers 14.67% vs 10.1% avg — graded D+ (weak) (2026-07-22) [investinglive.com; tmgm market news (Jul 22, 2026)]
+- 10-year note auction ($42B) = High yield 4.683%; bid-to-cover 2.53 vs 2.47 six-month avg; indirects 76.7% vs 71.3% avg — solid/above-average demand (2026-08-12) [Exante Data; RTTNews; Boock Report]
+- 30-year bond auction (new issue, $25B announced) = High yield 5.216% — highest 30y auction stop since 2001; bid-to-cover 2.39 (down from 2.44 on Jul 9); indirects 66.8%; median yield 5.150% — 'decent demand' at record cost (2026-08-13) [Exante Data; Bloomberg ('Costliest US Bond Sale Since 2001'); primerates.com; TreasuryDirect]
+- 20-year bond auction (new issue, $18B) = High yield 5.204% vs 5.199% WI (0.5bp tail); bid-to-cover 2.53 vs ~2.66 six-auction avg; indirects 62.9% (~3pp below avg); above-average dealer takedown — mildly weak (2026-08-19) [investinglive.com; tmgm; Nasdaq/RTTNews]
+- 30-year TIPS reopening real yield = 2.973% — highest real yield in nearly 25 years (2026-08-20) [tipswatch.com (Aug 20, 2026)]
+- 5-year note auction ($70B) = Slightly above average demand (2026-08-26) [RTTNews]
+- Treasury long-end buyback expansion = Liquidity-support buyback max size at least doubled from $2B to ≥$4B per operation for 10–20y and 20–30y sectors, effective Sep 9 through Nov 4, 2026; long yields fell sharply on announcement (2026-08-19) [Treasury press release sb0607; CNBC; Quartz; Yahoo Finance]
+- 30-year Treasury yield = 4.91% (June monthly average 4.95%) (2026-06-30) [YCharts 30 Year Treasury Rate (H.15)]
+- 30-year Treasury yield = ~5.053% (trading above 5%) (2026-07-07) [CNBC (Jul 7, 2026)]
+- 10-year Treasury yield, period high = 4.75% — highest of past year (2026-07-31) [CNBC/Forbes via search summary]
+- 30-year Treasury yield = 5.31% intraday — highest in 19 years (since 2007) (2026-08-17) [CNBC (Aug 17, 2026); Bloomberg (Aug 17, 2026)]
+- 30-year Treasury yield = 5.33% — new 19-year high, on inflation and government-spending concerns (2026-08-18) [CNBC (Aug 18, 2026)]
+- 20-year Treasury yield = ~5.27% ahead of Aug 19 20-year auction (2026-08-16) [Bloomberg (Aug 16, 2026)]
+- 30-year Treasury yield = 5.19–5.20%; 10-year 4.68% (post-buyback-announcement retracement) (2026-08-27) [Forbes Treasury Rates (Aug 27, 2026); CNBC quotes]
+- Attribution of long-end selloff = Strategists cite deficit set to eclipse 2025, tariff-refund revenue hole, inflation above 2% target, heavy corporate issuance, and rising term premium; selloff began in June per CNBC (2026-08-18) [CNBC 'US government debt yields are surging at a bad time' (Aug 18, 2026); Axios (Aug 17, 2026)]
+
+## SOURCES
+- https://www.cnbc.com/2026/08/12/us-budget-deficit-surged-in-july-to-highest-level-since-march-2021.html
+- https://finance.yahoo.com/economy/policy/articles/us-july-deficit-tops-432-180448445.html
+- https://www.arkansasonline.com/news/2026/aug/12/us-ends-july-with-4322-billion-mothly-deficit/
+- https://www.bloomberg.com/news/articles/2026-08-12/us-budget-deficit-surged-in-july-on-acceleration-in-spending
+- https://www.crfb.org/press-releases/treasury-confirms-18-trillion-deficit-first-10-months-fy-2026
+- https://www.americanactionforum.org/insight/debt-and-deficit-lack-of-progress-report-july-2026/
+- https://www.btimesonline.com/articles/178195/20260813/u-s-tariff-refunds-top-100-billion-as-july-repayments-exceed-collections-by-nearly-9-billion.htm
+- https://budgetmodel.wharton.upenn.edu/p/2026-02-20-supreme-court-tariff-ruling/
+- https://www.washingtontimes.com/news/2026/aug/21/supreme-court-blew-nearly-trillion-dollar-hole-budget-striking-trump/
+- https://www.cbo.gov/publication/62704
+- https://www.cbo.gov/system/files/2026-08/61983-2026-07-MBR.pdf
+- https://thehill.com/business/6022755-cbo-fiscal-2026-deficit-200-billion-more/
+- https://fortune.com/2026/08/10/how-big-deficit-national-debt-tariffs-cbo/
+- https://home.treasury.gov/news/press-releases/sb0584
+- https://finance.yahoo.com/economy/policy/articles/us-treasury-raises-third-quarter-190213978.html
+- https://home.treasury.gov/news/press-releases/sb0590
+- https://finance.yahoo.com/economy/policy/articles/us-treasury-keeps-auction-sizes-145911745.html
+- https://tradersunion.com/news/financial-news/show/2909128-us-treasury-august-refunding-125b/
+- https://datatrack.trendforce.com/blog/content/62282/u-s-keeps-coupon-treasury-issuance-steady-as-t-bill-and-chill-deepens-reliance-on-short-term-debt-and-refinancing-risks
+- https://home.treasury.gov/news/press-releases/sb0607
+- https://www.cnbc.com/2026/08/19/treasury-announces-upscaled-buyback-operation-for-longer-term-debt-sending-yields-lower.html
+- https://www.cnbc.com/2026/08/20/treasury-bond-buybacks-long-term-yields.html
+- https://qz.com/treasury-long-term-bond-buybacks-liquidity-081926
+- https://x.com/ExanteData/status/2087949168820072806
+- https://www.bloomberg.com/news/articles/2026-08-13/us-braces-for-30-year-bond-auction-at-highest-yield-since-2001
+- https://primerates.com/treasury-pays-5-216-percent-30-year-bond-costliest-since-2001/
+- https://www.bloomberg.com/news/articles/2026-07-09/us-30-year-bond-auction-set-to-draw-highest-yield-in-20-years
+- https://investinglive.com/news/us-treasury-auctions-off-13-billion-of-20-year-bonds-at-a-high-yield-of-5-163/
+- https://www.tmgm.com/en/analysis/market-news/article/united-states-20-year-bond-auction-5163-vs-4927-202607221703
+- https://investinglive.com/news/us-treasury-auctions-off-16-billion-of-20-year-bonds-at-a-high-yield-of-xx/
+- https://www.tmgm.com/en/analysis/market-news/article/united-states-20-year-bond-auction-5204-vs-5163-202608191802
+- https://www.bloomberg.com/news/articles/2026-08-16/us-20-year-bond-sale-to-test-demand-as-yield-curve-steepens
+- https://x.com/ExanteData/status/2087586725744849085
+- https://www.rttnews.com/3679611/ten-year-note-auction-attracts-modestly-above-average-demand.aspx
+- https://tipswatch.com/2026/08/20/30-year-tips-reopening-gets-real-yield-of-2-973-highest-in-nearly-25-years/
+- https://www.rttnews.com/3684932/five-year-note-auction-attracts-slightly-above-average-demand.aspx
+- https://www.cbsnews.com/news/national-debt-tops-40-trillion-doubles/
+- https://www.washingtonpost.com/business/2026/08/18/us-debt-set-hit-40-trillion-months-earlier-than-expected/
+- https://www.crfb.org/papers/qa-everything-you-should-know-about-debt-ceiling
+- https://money.usnews.com/money/personal-finance/family-finance/articles/trumps-one-big-beautiful-bill-just-raised-the-debt-ceiling-by-5-trillion-heres-why-that-matters-to-you
+- https://www.americanactionforum.org/insight/cbo-estimates-the-fiscal-impact-of-the-one-big-beautiful-bill/
+- https://www.crfb.org/blogs/obbba-dynamic-score-comes-47-trillion
+- https://www.cnbc.com/2026/08/18/treasury-yields-.html
+- https://www.cnbc.com/2026/08/18/us-government-debt-yields-are-surging-at-a-bad-time-heres-whats-behind-the-move.html
+- https://www.cnbc.com/2026/08/17/treasury-yields-federal-reserve-fomc-minutes.html
+- https://www.bloomberg.com/news/articles/2026-08-17/us-bond-selloff-drives-30-year-yields-to-the-highest-since-2007
+- https://www.cnbc.com/2026/07/07/us-treasury-yields-investors-await-trade-deficit-data-.html
+- https://ycharts.com/indicators/30_year_treasury_rate
+- https://www.forbes.com/advisor/investing/treasury-rates/
+- https://www.axios.com/2026/08/17/treasury-yields-warsh-bonds

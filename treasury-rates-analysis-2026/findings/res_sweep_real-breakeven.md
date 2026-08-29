@@ -1,0 +1,92 @@
+# real-breakeven
+
+## SUMMARY
+Between end-June 2026 and late August 2026, the rise in nominal 10Y/30Y Treasury yields was almost entirely a REAL-yield story; breakevens were flat to slightly lower. On June 30, 2026 the 10Y nominal yield was 4.441% and the 30Y was 4.929% (CNBC). By August 27 the 10Y was 4.68% (4.72% Aug 28) and the 30Y 5.20%, after the 30Y peaked at 5.33% on Aug 18 — a 19-year high; the 10Y peaked at 4.75% on July 31. That is roughly +24-28bp on 10s and +27bp on 30s point-to-point (+40bp at the 30Y peak). Real yields rose by at least as much: FRED DFII30 was 2.69% on June 26 and reached ~2.99-3.04% in mid-August (WFII30 weekly avg 2.99% for week ending Aug 14; daily 3.04% on Aug 14 — an 18-year record), with the Aug 20 30-year TIPS reopening auction clearing at 2.973% real, the highest since October 2001 — i.e., 30Y real +29 to +35bp while the 30Y breakeven (nominal minus real: ~4.93−2.69 = ~2.24% end-June vs ~5.20−2.98 = ~2.22% late Aug) was flat-to-down ~2bp. The 10Y decomposition is the same: the 10Y breakeven (T10YIE) averaged 2.34% in June (2.36% on June 5), dipped to 2.26-2.28% around July 23, and was back at 2.34% on Aug 21 — net ~0bp — so essentially 100% of the ~24bp 10Y nominal rise came from the real yield, which moved from an implied ~2.10% on June 30 (4.441 nominal − ~2.34 breakeven; note this end-June real level is inferred, not directly observed) to 2.34-2.35% in late August (DFII10 2.35% Aug 20, 2.34% Aug 26; CFR notes ~2.41% just before the Aug 19 Treasury buyback announcement, which knocked real yields ~6bp lower with breakevens unchanged). The July 23 new 10Y TIPS auctioned at 2.438% real — highest since Oct 2008 — with a 2.26% breakeven against a 4.70% nominal 10Y. Shorter breakevens actually FELL over the broader period: the 5Y breakeven was ~2.5-2.66% in March 2026 (post-Iran-war inflation shock, CPI ~4.2% y/y in May) but ~2.21-2.28% in August; the 5y5y forward sat at ~2.27-2.33% in August — anchored. Qualitative confirmation: Empower's August research states the curve "moved higher on the back of real rates, rather than inflation expectations... breakevens remain contained," and CFR/Empower cite the Kim-Wright 10Y term premium rising from ~0.52% (mid-Feb) to ~0.84% (mid-Aug). Macro backdrop: the Fed held at 3.50-3.75% on July 29 (9-3, three dissents favoring a HIKE), heavy Treasury supply, and fiscal concerns — a real-rate/term-premium driven bear steepening, not an inflation-expectations repricing. Caveats: exact FRED daily DFII10/T10YIE for June 30 could not be surfaced directly (end-June real yield is computed from nominal minus breakeven); TradingEconomics' "August" monthly readings (T10YIE 2.25%, T5YIE 2.28%, T5YIFR 2.33%) and condoredge's snapshot (10Y BEI 2.24%, 5Y 2.21%, 5y5y 2.27%) differ by a few bp from FRED daily prints (T10YIE 2.34% Aug 21), reflecting averaging/timing differences.
+
+## DATA POINTS
+- 10Y nominal Treasury yield (close) = 4.38% (2026-06-26) [Advisor Perspectives dshort Treasury Yields Snapshot / etftrends]
+- 10Y nominal Treasury yield = 4.441% (2026-06-30) [CNBC (June 30, 2026 treasury yields article)]
+- 30Y nominal Treasury yield = 4.929% (2026-06-30) [CNBC (June 30, 2026 treasury yields article)]
+- 2Y nominal Treasury yield = 4.152% (2026-06-30) [CNBC (June 30, 2026 treasury yields article)]
+- 30Y real yield (FRED DFII30) = 2.69% (2026-06-26) [FRED DFII30 (via web search result)]
+- 10Y breakeven inflation (daily, T10YIE) = 2.36% (2026-06-05) [ConvexTrade metrics (FRED T10YIE)]
+- 10Y breakeven inflation (June monthly avg, T10YIEM) = 2.34% (2026-06-30) [FRED T10YIEM via MacroMicro]
+- 10Y real yield (implied: DGS10 minus T10YIE, computed not observed) = ~2.10% (2026-06-30) [Computed from CNBC 4.441% nominal minus ~2.34% breakeven]
+- 10Y TIPS auction real yield (new issue, highest since Oct 2008) = 2.438% (2026-07-23) [tipswatch.com (July 23, 2026 auction recap)]
+- 10Y nominal yield at TIPS auction close = 4.70% (2026-07-23) [tipswatch.com]
+- 10Y breakeven at TIPS auction = 2.26% (2026-07-23) [tipswatch.com]
+- 10Y breakeven inflation (T10YIE) = 2.28% (2026-07-23) [ConvexTrade / FRED T10YIE]
+- 10Y nominal Treasury yield (Fed day) = 4.671% (2026-07-29) [CNBC (July 29, 2026 Fed meeting article)]
+- 30Y nominal Treasury yield (Fed day; intraday high 5.244%) = 5.201% (2026-07-29) [CNBC (July 29, 2026)]
+- 10Y nominal Treasury yield (close, 1-year high) = 4.75% (2026-07-31) [Advisor Perspectives dshort Treasury Yields Snapshot: July 31, 2026]
+- 30Y nominal Treasury yield (close, highest since 2007) = 5.27% (2026-07-31) [Chase investment insights / dshort snapshot]
+- 10Y nominal Treasury yield = 4.63% (2026-08-13) [ConvexTrade metrics (DGS10)]
+- 30Y real yield (daily, 18-year record) = 3.04% (2026-08-14) [Equity Edge Research (substack), week ending Aug 14 2026]
+- 30Y real yield (weekly avg, WFII30) = 2.99% (2026-08-14) [FRED WFII30 (week ending Friday Aug 14, 2026)]
+- 30Y nominal Treasury yield = 5.31% (2026-08-17) [CNBC (Aug 17, 2026)]
+- 30Y nominal Treasury yield (19-year high) = 5.33% (2026-08-18) [CNBC (Aug 18, 2026)]
+- 10Y real yield before Treasury buyback announcement = ~2.41% (2026-08-18) [Council on Foreign Relations (buyback analysis)]
+- 10Y real yield after buyback announcement (breakeven unchanged that day) = 2.35% (2026-08-19) [Council on Foreign Relations]
+- 30Y TIPS reopening auction real yield (highest since Oct 2001) = 2.973% (2026-08-20) [tipswatch.com (Aug 20, 2026 auction recap)]
+- 10Y real yield (DFII10) = 2.35% (2026-08-20) [MacroRadar (10-Year Real Interest Rate, as of Aug 20, 2026)]
+- 10Y breakeven inflation (T10YIE) = 2.34% (2026-08-21) [FRED T10YIE via eco3min daily dataset]
+- 30Y TIPS real yield = ~3.0% (2026-08-24) [Forbes (Long-Term TIPS Gain Appeal As Real Yields Hit Multi-Decade Highs, Aug 24 2026)]
+- 10Y real yield (DFII10 / 10Y TIPS yield) = 2.34% (2026-08-26) [Macrotrends 10-Year TIPS Yield]
+- 10Y nominal Treasury yield = 4.68% (2026-08-27) [Forbes Advisor Treasury Rates Today (Aug 27, 2026)]
+- 30Y nominal Treasury yield = 5.20% (2026-08-27) [Forbes Advisor Treasury Rates Today (Aug 27, 2026)]
+- 10Y nominal Treasury yield = 4.72% (2026-08-28) [TradingEconomics US 10Y government bond yield]
+- 5Y breakeven inflation (T5YIE, August monthly reading) = 2.28% (2026-08-31) [TradingEconomics (Fed data)]
+- 5Y breakeven inflation (snapshot) = 2.21% (2026-08-15) [condoredge.com breakeven inflation dashboard (mid-August snapshot)]
+- 10Y breakeven inflation (snapshot) = 2.24% (2026-08-15) [condoredge.com breakeven inflation dashboard (mid-August snapshot)]
+- 5y5y forward inflation expectation (T5YIFR, August monthly reading) = 2.33% (2026-08-31) [TradingEconomics (Fed data)]
+- 5y5y forward inflation expectation (late-Aug snapshot) = 2.27% (2026-08-26) [condoredge.com / ycharts (T5YIFR)]
+- 5Y breakeven inflation (context, post-Iran-war inflation shock) = 2.51-2.66% (2026-03-31) [TradingEconomics (Fed data, March 2026)]
+- 10Y TIPS reopening auction real yield (context) = 2.169% (2026-05-21) [tipswatch.com (May 21, 2026 auction recap)]
+- Kim-Wright 10Y term premium (mid-Feb to mid-Aug 2026) = 0.52% -> 0.84% (2026-08-15) [Council on Foreign Relations / Empower August 2026 research]
+- Fed funds target range (held, 9-3 vote with 3 dissents for a hike) = 3.50-3.75% (2026-07-29) [CNBC Fed meeting recap July 29, 2026]
+- CPI inflation y/y (context for breakevens) = ~4.2% (2026-05-31) [SavingToInvest TIPS 2026 article]
+- Change decomposition, 10Y (Jun 30 -> Aug 27): nominal +24bp, real +~24bp, breakeven ~0bp = ~100% real-yield driven (2026-08-27) [Computed from CNBC, FRED T10YIE, Macrotrends, Forbes Advisor]
+- Change decomposition, 30Y (Jun 30 -> Aug 27): nominal +27bp (peak +40bp Aug 18), real +~29bp, breakeven ~-2bp = ~100%+ real-yield driven (2026-08-27) [Computed from CNBC, FRED DFII30/WFII30, tipswatch, Forbes Advisor]
+
+## SOURCES
+- https://www.cnbc.com/2026/06/30/treasury-yields-jobs-data-june.html
+- https://www.advisorperspectives.com/dshort/updates/2026/06/26/treasury-yields-snapshot-june-26-2026
+- https://www.etftrends.com/fixed-income-content-hub/treasury-yields-snapshot-june-26-2026/
+- https://www.advisorperspectives.com/dshort/updates/2026/07/01/10-year-treasury-yield-long-term-perspective-june-2026
+- https://www.advisorperspectives.com/dshort/updates/2026/07/31/treasury-yields-snapshot-july-31-2026
+- https://tipswatch.com/2026/07/23/10-year-tips-auction-gets-real-yield-of-2-438-a-great-result-for-investors/
+- https://tipswatch.com/2026/07/19/coming-this-week-an-attractive-new-10-year-tips/
+- https://tipswatch.com/2026/05/21/10-year-tips-auction-gets-real-yield-of-2-169-to-soft-demand/
+- https://tipswatch.com/2026/08/20/30-year-tips-reopening-gets-real-yield-of-2-973-highest-in-nearly-25-years/
+- https://www.cnbc.com/2026/07/29/treasury-yields-fed-interest-rates.html
+- https://www.cnbc.com/2026/07/29/fed-meeting-today-live-updates.html
+- https://www.cnbc.com/2026/08/17/treasury-yields-federal-reserve-fomc-minutes.html
+- https://www.cnbc.com/2026/08/18/treasury-yields-.html
+- https://www.cnbc.com/2026/08/19/treasury-yields-multi-decade-highs-bonds-inflation.html
+- https://www.forbes.com/sites/timbeyer/2026/08/24/long-term-tips-gain-appeal-as-real-yields-hit-multi-decade-highs/
+- https://www.forbes.com/advisor/investing/treasury-rates/
+- https://www.macrotrends.net/3010/10-year-tips-yield
+- https://www.macroradar.io/real-interest-rate
+- https://fred.stlouisfed.org/series/DFII10
+- https://fred.stlouisfed.org/series/DFII30
+- https://fred.stlouisfed.org/series/WFII30
+- https://fred.stlouisfed.org/series/T10YIE
+- https://fred.stlouisfed.org/series/T10YIEM/
+- https://fred.stlouisfed.org/series/T5YIE
+- https://fred.stlouisfed.org/series/T5YIFR
+- https://eco3min.fr/en/us-10-year-breakeven-inflation-dataset/
+- https://en.macromicro.me/series/4667/ten-year-breakeven-rate
+- https://tradingeconomics.com/united-states/10-year-breakeven-inflation-rate-fed-data.html
+- https://tradingeconomics.com/united-states/5-year-breakeven-inflation-rate-fed-data.html
+- https://tradingeconomics.com/united-states/5-year-5-year-forward-inflation-expectation-rate-fed-data.html
+- https://tradingeconomics.com/united-states/government-bond-yield
+- https://tradingeconomics.com/united-states/10-year-tips-yield
+- https://convextrade.com/metrics/t10yie
+- https://convextrade.com/metrics/dgs10
+- https://condoredge.com/econ/breakeven-inflation
+- https://equityedgeresearch.substack.com/p/the-30-year-real-yield-shock-why
+- https://www.chase.com/personal/investments/learning-and-insights/article/30-year-treasury-yields-in-2026-considerations-for-investors
+- https://www.cfr.org/articles/what-the-treasurys-buyback-surprise-says-about-the-bond-market
+- https://www.empower.com/investment-insights/research/between-margins-august-2026
+- https://savingtoinvest.com/how-and-why-to-buy-treasury-inflation/
+- https://intellectia.ai/blog/30-year-treasury-yield-19-year-high-august-2026

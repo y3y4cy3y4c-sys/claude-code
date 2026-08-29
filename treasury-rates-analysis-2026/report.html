@@ -1,0 +1,661 @@
+<title>The 5.33% Summer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+    --accent:#256abf; --accent-ink:#1c5cab; --wash:#eef4fc;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100;
+    --chip-major:#1c5cab; --chip-mod:#5598e7; --chip-minor:#86b6ef;
+    --serif:'IBM Plex Serif',Georgia,'Times New Roman',serif;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+      --accent:#3987e5; --accent-ink:#6da7ec; --wash:#12203a;
+      --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+      --chip-major:#6da7ec; --chip-mod:#3987e5; --chip-minor:#1c5cab;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+    --accent:#3987e5; --accent-ink:#6da7ec; --wash:#12203a;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+    --chip-major:#6da7ec; --chip-mod:#3987e5; --chip-minor:#1c5cab;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px 96px}
+  .prose{max-width:730px}
+  header.masthead{padding:64px 0 8px;border-bottom:1px solid var(--border);margin-bottom:40px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 18px}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,6vw,58px);line-height:1.06;margin:0 0 20px;text-wrap:balance;letter-spacing:-.01em}
+  .dek{font-size:19px;line-height:1.6;color:var(--ink2);max-width:730px;margin:0 0 26px}
+  .meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0 0 34px}
+  h2{font-family:var(--serif);font-weight:600;font-size:31px;line-height:1.2;margin:72px 0 10px;text-wrap:balance}
+  h2 .sec{font-family:var(--mono);font-weight:500;font-size:15px;color:var(--accent-ink);vertical-align:.35em;letter-spacing:.08em;margin-right:10px}
+  h3{font-family:var(--sans);font-weight:700;font-size:19px;margin:44px 0 8px;text-wrap:balance}
+  p{margin:0 0 16px}
+  a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:2px}
+  strong{font-weight:600}
+  .lede{font-size:17.5px}
+  .num{font-variant-numeric:tabular-nums}
+  /* ------- TL;DR ------- */
+  .tldr{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:22px 26px;margin:36px 0 8px}
+  .tldr h4{margin:0 0 10px;font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:0 0 8px}
+  .tldr li:last-child{margin:0}
+  /* ------- stat tiles ------- */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:36px 0 8px}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 20px 16px}
+  .kpi .lab{font-size:13px;color:var(--ink2);margin:0 0 6px}
+  .kpi .val{font-weight:600;font-size:32px;line-height:1.05;letter-spacing:-.01em}
+  .kpi .sub{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.45}
+  /* ------- chart cards ------- */
+  .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 22px 14px;margin:30px 0}
+  .chart-card h4{margin:0 0 2px;font-size:16.5px;font-weight:700}
+  .chart-card .sub{margin:0 0 14px;font-size:13.5px;color:var(--ink2)}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;margin:2px 0 8px;font-size:13px;color:var(--ink2)}
+  .legend .li{display:inline-flex;align-items:center;gap:7px}
+  .legend .key-line{width:16px;height:0;border-top:3px solid;border-radius:2px}
+  .legend .key-rect{width:11px;height:11px;border-radius:3px}
+  .chart{position:relative;width:100%}
+  .chart svg{display:block;width:100%;height:auto}
+  .tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:7px;box-shadow:0 3px 14px rgba(0,0,0,.13);padding:9px 12px;font-size:12.5px;display:none;z-index:5;min-width:130px}
+  .tip .td{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:5px}
+  .tip .row{display:flex;align-items:center;gap:8px;margin:2px 0}
+  .tip .k{width:12px;height:0;border-top:3px solid;border-radius:2px;flex:none}
+  .tip .v{font-weight:600;font-variant-numeric:tabular-nums}
+  .tip .n{color:var(--ink2)}
+  .src-note{font-size:11.5px;color:var(--muted);margin:10px 0 2px;line-height:1.5}
+  details.tbl{margin:8px 0 2px;font-size:13px}
+  details.tbl summary{cursor:pointer;color:var(--accent-ink);font-size:12.5px}
+  details.tbl table{border-collapse:collapse;margin:10px 0 6px;width:100%;max-width:640px}
+  details.tbl th,details.tbl td{text-align:right;padding:4px 10px;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
+  details.tbl th:first-child,details.tbl td:first-child{text-align:left;font-family:var(--mono);font-size:12px}
+  details.tbl th{color:var(--ink2);font-weight:600}
+  .scrollx{overflow-x:auto}
+  /* ------- scoreboard & tables ------- */
+  table.board{border-collapse:collapse;width:100%;margin:22px 0;font-size:14.5px;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  table.board th{font-size:12px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);font-weight:600;text-align:left;padding:12px 14px;border-bottom:1px solid var(--axis);background:var(--surface)}
+  table.board td{padding:11px 14px;border-bottom:1px solid var(--grid);vertical-align:top}
+  table.board tr:last-child td{border-bottom:none}
+  table.board td.n,table.board th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .delta{font-family:var(--mono);font-weight:600;font-size:13px;white-space:nowrap}
+  .mile{font-size:13px;color:var(--ink2)}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;white-space:nowrap}
+  .chip i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .chip.major i{background:var(--chip-major)} .chip.mod i{background:var(--chip-mod)} .chip.minor i{background:var(--chip-minor)}
+  /* ------- equation ------- */
+  .eq{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin:26px 0 30px}
+  .eq .term{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;text-align:center;flex:1 1 150px}
+  .eq .term b{display:block;font-size:14.5px}
+  .eq .term span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+  .eq .term .verdict{display:block;font-family:var(--mono);font-size:13px;font-weight:600;margin-top:8px}
+  .eq .op{align-self:center;font-size:20px;color:var(--muted);flex:0}
+  /* ------- two stories ------- */
+  .stories{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:24px 0}
+  .story{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px}
+  .story h4{margin:0 0 12px;font-size:15.5px}
+  .story ul{margin:0;padding:0;list-style:none}
+  .story li{padding:7px 0;border-bottom:1px solid var(--grid);font-size:14px;display:flex;gap:10px;align-items:baseline}
+  .story li:last-child{border-bottom:none}
+  .story .m{font-family:var(--mono);font-weight:600;flex:none;width:66px;font-size:12px}
+  .story .yes{color:var(--accent-ink)} .story .no{color:var(--muted)} .story .part{color:var(--ink2)}
+  .verdict-panel{background:var(--wash);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin:26px 0}
+  .verdict-panel h4{margin:0 0 10px;font-family:var(--serif);font-size:21px}
+  .verdict-panel p:last-child{margin:0}
+  /* ------- timeline ------- */
+  .timeline{border-left:2px solid var(--axis);margin:26px 0 10px;padding-left:0;list-style:none}
+  .timeline li{position:relative;padding:0 0 18px 26px;max-width:700px}
+  .timeline li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--surface)}
+  .timeline li.big::before{background:var(--s2)}
+  .timeline .d{font-family:var(--mono);font-size:12px;color:var(--accent-ink);font-weight:600;letter-spacing:.03em}
+  .timeline .t{font-size:14.5px;line-height:1.5}
+  /* ------- cards ------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin:26px 0}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px}
+  .card h4{margin:0 0 8px;font-size:15.5px}
+  .card p{font-size:14px;color:var(--ink2);margin:0}
+  /* ------- glossary ------- */
+  .gloss{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+  .gloss h4{margin:0 0 10px;font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+  .gloss dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:4px 28px}
+  .gloss dt{font-weight:600;font-size:14px;margin-top:8px}
+  .gloss dd{margin:0;font-size:13.5px;color:var(--ink2)}
+  /* ------- sources ------- */
+  .sources{font-size:13px;color:var(--ink2);columns:2;column-gap:36px;max-width:960px}
+  .sources p{break-inside:avoid;margin:0 0 10px}
+  @media(max-width:720px){.sources{columns:1}}
+  .footnote{font-size:13px;color:var(--muted);border-top:1px solid var(--border);margin-top:64px;padding-top:18px}
+  @media (prefers-reduced-motion: no-preference){
+    .kpi,.card{transition:border-color .15s ease}
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+</style>
+
+<div class="wrap">
+<header class="masthead">
+  <p class="eyebrow">Rates research · June 26 – August 28, 2026 · compiled August 29, 2026</p>
+  <h1>The 5.33% Summer</h1>
+  <p class="dek">In two months the U.S. 30-year Treasury yield climbed to 5.33% — its highest since June 2007 — while the S&amp;P 500 sat within about 1% of a record. What sold off, why the long end led, and how to tell a Fed repricing from a fiscal &amp; term-premium repricing.</p>
+  <p class="meta">Window: Jun 30 → Aug 28, 2026 · Sources: CNBC, Bloomberg, U.S. Treasury, FRED / NY Fed, BLS, BEA, CBO, CRFB, TIPS Watch, Advisor Perspectives &amp; others (linked below)</p>
+</header>
+
+<div class="tldr">
+  <h4>The short answer</h4>
+  <ul>
+    <li><strong>What happened:</strong> the whole curve sold off, but the <strong>long end led</strong> — 30Y +24bp to 5.17% (peak 5.33% on Aug 18, a 19-year high), 10Y +29bp to 4.73%, 2Y +19bp to 4.34%, and the curve <strong>bear-steepened</strong> (2s10s 29→39bp; 30Y–2Y peaked +38bp steeper mid-August).</li>
+    <li><strong>It was a real-yield move, not an inflation-expectations move:</strong> 10Y breakevens ended flat (~2.34%); 10Y real yields rose ~24bp; long TIPS auctions cleared at the highest real yields since 2001–08.</li>
+    <li><strong>Two engines, not one:</strong> a genuine <strong>hawkish Fed repricing</strong> (June dots erased a cut; the July FOMC saw three hike dissents; Warsh's Jackson Hole speech put Sept-hike odds at 58%) <em>plus</em> a <strong>fiscal / term-premium repricing</strong> (ACM term premium +~35bp; $432B July deficit; $40T debt; costliest 30Y auction since 2001; Treasury doubled buybacks to calm the long end).</li>
+    <li><strong>The tell:</strong> in Aug 7–18 the front end <em>rallied</em> on a −23k payrolls print while 30s made 19-year highs — that divergence is term premium, not the Fed.</li>
+    <li><strong>It was global:</strong> UK 30Y highest since 1998, 30Y JGB above 4% for the first time ever, German 30Y funding costliest since 2011, Korea's curve steepest since 2021 — a synchronized long-end repricing.</li>
+  </ul>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><p class="lab">30-year Treasury · peak</p><p class="val num">5.33%</p><p class="sub">Aug 18 intraday — highest since June 2007. Closed the window at 5.17%.</p></div>
+  <div class="kpi"><p class="lab">10-year Treasury · net move</p><p class="val num">+29bp</p><p class="sub">4.44% → 4.73% (Jun 30 → Aug 28 close). Peak 4.75% on Jul 31.</p></div>
+  <div class="kpi"><p class="lab">10Y breakeven · net move</p><p class="val num">~0bp</p><p class="sub">2.34% → 2.34%. The entire rise came from <em>real</em> yields.</p></div>
+  <div class="kpi"><p class="lab">ACM 10Y term premium</p><p class="val num">+35bp</p><p class="sub">0.51% (June avg) → 0.87% (July avg); 0.80% latest daily (Aug 13).</p></div>
+</div>
+
+<div class="gloss">
+  <h4>Five terms, in plain words</h4>
+  <dl>
+    <dt>Basis point (bp)</dt><dd>0.01%. A move from 5.00% to 5.33% is +33bp.</dd>
+    <dt>Real yield</dt><dd>The yield after expected inflation — what TIPS (inflation-protected bonds) pay. It compensates for growth and the price of capital.</dd>
+    <dt>Breakeven inflation</dt><dd>Nominal yield minus real yield: the inflation rate the market is pricing in.</dd>
+    <dt>Term premium</dt><dd>The extra yield investors demand just for holding a <em>long</em> bond instead of rolling short ones — compensation for duration, fiscal and inflation <em>uncertainty</em>, and who has to absorb the supply.</dd>
+    <dt>Bear steepener</dt><dd>Yields rise and long yields rise <em>faster</em> than short ones. Classic signature of supply / term-premium / inflation-risk moves rather than pure Fed moves.</dd>
+  </dl>
+</div>
+
+<!-- ================= SECTION A ================= -->
+<h2 id="a"><span class="sec">A</span>What happened</h2>
+
+<div class="prose">
+<p class="lede">Start with the levels. On June 30 the curve read 2Y 4.15%, 10Y 4.44%, 30Y 4.93%. Yields ground higher all July — the 30-year crossed 5% in the first week and 5.20% by the Fed's July 29 meeting — then peaked in mid-August: the 30-year touched <strong>5.33% on August 18, its highest since June 2007</strong>, before a surprise Treasury buyback announcement and a late hawkish twist at Jackson Hole reshaped the move. The window closed at 2Y 4.34%, 10Y 4.73%, 30Y 5.17%.</p>
+</div>
+
+<div class="chart-card">
+  <h4>U.S. Treasury yields, late June → late August 2026</h4>
+  <p class="sub">Dated market observations (mostly closes), % — the 30-year led the sell-off from the start</p>
+  <div id="c-yields" class="chart"></div>
+  <p class="src-note">Sources: CNBC daily bond reports, Advisor Perspectives (dshort) Treasury Yields Snapshots, StreetStats, FRED DGS30. Points are dated observations from those reports, connected for legibility — not a complete daily series. Aug 18 30Y point is the intraday peak.</p>
+</div>
+
+<div class="chart-card">
+  <h4>Net change by maturity, Jun 30 → Aug 28</h4>
+  <p class="sub">Basis points. The bill barely moved (the Fed never did); everything 5 years and out repriced</p>
+  <div id="c-change" class="chart"></div>
+  <p class="src-note">3M from monthly-average bill data (FRED TB3MS / TradingEconomics); 5Y start proxied by the Jun 25 auction stop. ◆ marks the 30Y at its Aug 18 peak (+40bp) before the late-window retracement.</p>
+</div>
+
+<h3>The curve: a bear steepener that partially unwound</h3>
+<div class="prose">
+<p>The move was a textbook <strong>bear steepening</strong> until the last ten days. 2s10s widened from ~29bp (Jun 30) to ~44bp (Aug 27); the 30Y–2Y spread went from ~78bp to a peak of ~115bp on Aug 18 — that is, the long bond sold off <em>~38bp more</em> than the 2-year at the extreme. Two late events then compressed it again: Treasury's Aug 19 buyback expansion pulled the long end in ~10bp, and Fed Chair Kevin Warsh's hawkish Jackson Hole debut (Aug 28) spiked the <em>front</em> end (+6bp intraday on the 2Y) while 30s actually fell. Net-net the curve still ended ~5–15bp steeper.</p>
+</div>
+
+<div class="chart-card">
+  <h4>Curve spreads (computed from same-day levels)</h4>
+  <p class="sub">Basis points. Steepest at the Aug 18 long-end peak; flattened by buybacks (Aug 19) and a hawkish Jackson Hole (Aug 28)</p>
+  <div id="c-spreads" class="chart"></div>
+  <p class="src-note">Computed from the yield observations in the first chart (same-day pairs only).</p>
+</div>
+
+<h3>Real yields did all the work; breakevens did nothing</h3>
+<div class="prose">
+<p>Decompose the 10-year: nominal +24bp (Jun 30 → Aug 27), <strong>real yield +~24bp</strong> (an implied ~2.10% → 2.34% on FRED's DFII10), breakeven <strong>~0bp</strong> (2.34% → 2.34%). The 30-year is the same story: real +~29bp (2.69% → ~2.98%), breakeven roughly −2bp. The primary-market evidence is striking: the July 23 10-year TIPS auction cleared at a <strong>2.438% real yield, the highest since October 2008</strong>, and the Aug 20 30-year TIPS reopening at <strong>2.973%, the highest since 2001</strong>. Longer-run inflation expectations stayed anchored throughout — 5y5y forward ~2.3%, Michigan 5–10yr at 3.3% and falling — <em>despite</em> the oil shock (Section B). Whatever drove this, it was not the market raising its long-run inflation forecast.</p>
+</div>
+
+<div class="chart-card">
+  <h4>Where the rise came from: real yield vs. breakeven</h4>
+  <p class="sub">Change in basis points, Jun 30 → Aug 27 — essentially 100% real</p>
+  <div id="c-decomp" class="chart"></div>
+  <p class="src-note">FRED DFII10/DFII30, T10YIE; end-June 10Y real implied from nominal − breakeven; tipswatch.com auction results. Small residuals are timing/rounding.</p>
+</div>
+
+<h3>The global scoreboard: everyone's long end broke something</h3>
+<div class="prose">
+<p>This was not an American story. The week of August 17–18 alone produced multi-decade milestones on four continents' curves — strong evidence that a <em>global</em> duration risk premium, not any single central bank, was repricing. The UK was the worst performer (fiscal politics under new PM Andy Burnham); Japan's super-long bonds set all-time records even with its policy rate at just 1%; Korea was the outlier whose curve steepened for the <em>opposite</em> front-end reason — its central bank is hiking into a semiconductor boom.</p>
+</div>
+
+<div class="scrollx">
+<table class="board">
+  <tr><th>Market</th><th class="n">10Y late June</th><th class="n">10Y late Aug</th><th class="n">Δ</th><th>Long-end milestone this window</th></tr>
+  <tr><td><strong>United States</strong></td><td class="n num">4.44%</td><td class="n num">4.73%</td><td class="n"><span class="delta">+29bp</span></td><td class="mile">30Y peaked 5.33% (Aug 18) — highest since June 2007; costliest 30Y auction since 2001 (5.216%)</td></tr>
+  <tr><td><strong>United Kingdom</strong></td><td class="n num">4.76%</td><td class="n num">5.11%</td><td class="n"><span class="delta">+35bp</span></td><td class="mile">30Y gilt 5.45%→5.81%, peak ~5.85% (Aug 18) — reported highest since 1998; 10Y broke above the 2022 “Truss” peak, highest in the G7</td></tr>
+  <tr><td><strong>Germany</strong></td><td class="n num">2.97%</td><td class="n num">3.18%</td><td class="n"><span class="delta">+21bp</span></td><td class="mile">Aug 18 syndication of 30Y debt at 3.783% — costliest since 2011, amid record defense-driven issuance</td></tr>
+  <tr><td><strong>France</strong></td><td class="n num">3.90%<span style="color:var(--muted)">*</span></td><td class="n num">4.06%</td><td class="n"><span class="delta">+16bp</span></td><td class="mile">OAT–Bund spread ~90bp, reported widest since 2012; French 10Y rose above Spain's, near Italy's</td></tr>
+  <tr><td><strong>Japan</strong></td><td class="n num">~2.87%<span style="color:var(--muted)">†</span></td><td class="n num">2.88%</td><td class="n"><span class="delta">+~0bp</span></td><td class="mile">30Y JGB 3.94%→4.11%: above 4% for the <em>first time ever</em> (Aug 18); 10Y at 29-year highs; BOJ at 1.00%, highest since 1995</td></tr>
+  <tr><td><strong>South Korea</strong></td><td class="n num">—</td><td class="n num">~3.9%<span style="color:var(--muted)">‡</span></td><td class="n"><span class="delta">+~90bp YTD</span></td><td class="mile">3s10s widest since Oct 2021 (~54bp); BOK hiked back-to-back — Jul 16 to 2.75% (first since 2023), Aug 27 to 3.00% — on a chip-boom economy (2026 growth forecast raised to 3.3%)</td></tr>
+</table>
+</div>
+<p class="src-note">* France measured from its Jul 8 17-year high (earlier dated print not surfaced). † Japan 10Y from its Jul 7 29-year high; the JGB action was in 20–40Y. ‡ Korea's 10Y August level was not directly quoted in surfaced reports; change and curve-shape figures are as reported by Bloomberg/TradingEconomics. Sources linked below.</p>
+
+<h3>So where was the move concentrated?</h3>
+<div class="prose">
+<p><strong>The long end and the belly.</strong> The 3-month bill (+10bp, mechanically tracking a Fed that never moved) and the 2-year (+19bp, all of it in swings around data) moved least; the 10s and 30s moved most, the 30-year made the historic highs, the 20s and 30s were where auctions tailed, and long TIPS were where records fell. The one caveat: the 2-year's +19bp is <em>not</em> nothing — it repriced violently around events (Section B) — so "long-end concentrated" is right, "front end anchored" is not.</p>
+</div>
+
+<h3>Event timeline</h3>
+<ul class="timeline">
+  <li><span class="d">Jun 11–17</span><div class="t">Hawkish turn everywhere: ECB hikes 25bp to 2.25% (first since 2023); BOJ hikes to 1.00% (highest since 1995); the Fed holds but its June dot plot erases the projected 2026 cut — median end-2026 dot 3.8%, with 9 of 19 officials penciling at least one <em>hike</em>.</div></li>
+  <li><span class="d">Jun 29–30</span><div class="t">Supreme Court (5–4) blocks the President from firing Fed Governor Lisa Cook without process. Quarter ends: UST 2Y 4.15% / 10Y 4.44% / 30Y 4.93%; 30Y JGB 3.94% on PM Takaichi's spending plans.</div></li>
+  <li><span class="d">Jul 7–9</span><div class="t">Global long-end highs: JGB 10Y 2.87% (29-yr), OAT 3.90% (17-yr), Bund 3.07%. US 30Y reopening auction at 5.058%, highest since 2007. US strikes Iranian targets; Brent back above $76.</div></li>
+  <li><span class="d">Jul 14</span><div class="t">June CPI falls 0.4% m/m (3.5% y/y vs 3.8% expected) — biggest monthly drop since April 2020. Brief relief rally.</div></li>
+  <li><span class="d">Jul 16–23</span><div class="t">BOK hikes to 2.75%. UK: Burnham becomes PM; gilts break the 2022 Truss peak. Jul 23: tanker attack off Saudi Arabia + threats against Iran send <strong>Brent +7% to $100.69</strong>; Sept Fed-hike odds hit ~82% (Dec ~92%); US 10Y tops 4.70%.</div></li>
+  <li class="big"><span class="d">Jul 29–31</span><div class="t">FOMC holds 3.50–3.75% on a <strong>9–3 vote — three dissents in favor of a hike</strong>, the first triple same-direction dissent since 2016. Chair Warsh's inflation credibility questioned. Month-end: 10Y 4.75% (1-yr high), 30Y ~5.27%.</div></li>
+  <li><span class="d">Aug 3–5</span><div class="t">First joint US–Japan yen-buying intervention since 1998 (~$60B by Japan's MOF) — a weak yen was feeding the JGB selloff and its global spillover. Treasury lifts Q3 borrowing estimate $68B to $739B; the refunding holds coupon sizes but leans on bills.</div></li>
+  <li><span class="d">Aug 7</span><div class="t">July payrolls: <strong>−23,000</strong> (vs +80k expected) with −103k revisions; participation at a 5-year low. Front end rallies; Sept-hike odds drop to ~44%.</div></li>
+  <li><span class="d">Aug 12–14</span><div class="t">July CPI in line (3.4%). July budget deficit revealed: <strong>$432B, the largest monthly deficit since March 2021</strong>. New $25B 30Y bond auctioned at <strong>5.216% — costliest US 30Y funding since 2001</strong>.</div></li>
+  <li class="big"><span class="d">Aug 17–18</span><div class="t">The climax: 30Y prints <strong>5.31% then 5.33% — 19-year highs</strong>; gross federal debt crosses <strong>$40 trillion</strong>; Germany's costliest 30Y syndication since 2011; 30Y JGB above 4% for the first time ever; 30Y gilt at reported 1998 highs; Iran ceasefire memorandum expires, Brent back near $90s.</div></li>
+  <li><span class="d">Aug 19–21</span><div class="t">Treasury Secretary Bessent <strong>doubles long-end buybacks</strong> (to ≥$4B per operation, 10–30Y) — 30Y falls ~10bp on the announcement… and gives most of it back within two days. Another 20Y auction tails.</div></li>
+  <li><span class="d">Aug 20–27</span><div class="t">30Y TIPS reopening at 2.973% real (highest since 2001). July core PCE hot at 3.3%. BOK hikes again to 3.00%. S&amp;P 500 sits ~1% below its record close (7,798.99, Aug 13 — its 27th record of 2026).</div></li>
+  <li class="big"><span class="d">Aug 28</span><div class="t">Warsh's Jackson Hole debut: the Fed "will have work to do" on inflation. 2Y jumps to 4.34% (close); <strong>Sept-hike odds leap from 35% to ~58%</strong>; the 30Y actually slips to ~5.17%. The window ends with the curve flatter than its Aug 18 extreme but well above late June.</div></li>
+</ul>
+
+<!-- ================= SECTION B ================= -->
+<h2 id="b"><span class="sec">B</span>What caused it</h2>
+
+<div class="prose">
+<p class="lede">Use the standard decomposition — a long-term yield is (expected short rates) + (expected inflation) + (a term premium), with growth working through the first and through real yields. Each component can be measured this summer, and they didn't all move.</p>
+</div>
+
+<div class="eq">
+  <div class="term"><b>Long yield</b><span>10Y +29bp · 30Y +24bp (peak +40)</span><span class="verdict num">≈</span></div>
+  <div class="op">=</div>
+  <div class="term"><b>Expected short rates</b><span>2Y +19bp; hike odds repriced up</span><span class="verdict" style="color:var(--accent-ink)">↑ moderate</span></div>
+  <div class="op">+</div>
+  <div class="term"><b>Inflation expectations</b><span>10Y breakeven 2.34% → 2.34%</span><span class="verdict" style="color:var(--muted)">→ flat</span></div>
+  <div class="op">+</div>
+  <div class="term"><b>Term premium</b><span>ACM +~35bp; auctions tail; buybacks doubled</span><span class="verdict" style="color:var(--accent-ink)">↑↑ the marginal driver</span></div>
+</div>
+
+<h3>1 · Fed expectations: a real hawkish repricing — but of <em>hikes</em>, not cuts</h3>
+<div class="prose">
+<p>The Fed held at 3.50–3.75% all summer (its fifth-plus consecutive hold), but the <em>expected path</em> moved a lot, and in one direction: hawkish. The June SEP erased the projected 2026 cut (median dot 3.8%). The oil spike of July 23 briefly put <strong>~two hikes</strong> in the futures curve (Sept ~82%, Dec ~92%). Soft labor data then unwound most of it — down to ~42–46% after the −23k payrolls and an in-line CPI — before Warsh's Jackson Hole speech snapped Sept-hike odds back to <strong>~58%</strong> on the window's final day. A September <em>cut</em> priced at roughly 1% throughout August; prediction markets put 57% odds on <em>zero</em> cuts in all of 2026. The 2-year's +19bp and the round-trip in hike odds are a genuine monetary-policy repricing — enough to explain perhaps half of the 10-year's move, but <em>not</em> the long end's outperformance to the downside, and not the mid-August episode when the front end was rallying while 30s made highs.</p>
+</div>
+
+<div class="chart-card">
+  <h4>Market-implied probability of a September 2026 Fed hike</h4>
+  <p class="sub">%, CME FedWatch-style odds as reported on each date. A cut was never in play (~1%)</p>
+  <div id="c-odds" class="chart"></div>
+  <p class="src-note">CNBC reporting of fed funds futures / CME FedWatch; Aug 25 point from the reported 58.6% probability of a hold. Lines connect sparse dated observations.</p>
+</div>
+
+<h3>2 · Inflation, oil and the Iran shock: big headlines, anchored expectations</h3>
+<div class="prose">
+<p>The backdrop is the 2026 Iran war (from February) and the Strait of Hormuz crisis: CPI peaked at 4.2% y/y in May. Within our window the shock <em>re-escalated twice</em> — US strikes in early July, then the July 23 tanker attack that drove <strong>Brent +7% in a day to $100.69</strong> — and the ceasefire memorandum expired unrenewed on Aug 17 (Brent ~$88–94 late August; gasoline had its most expensive August on record at a $4.06 average). The prints themselves were two-sided: June CPI <em>fell</em> 0.4% m/m; July CPI was in line at 3.4%; July core PCE was hot at 3.3%.</p>
+<p>Here's the crucial subtlety: oil moved <strong>near-term Fed pricing</strong> (that ~82% hike-odds spike) and household 1-year expectations (4.3% Michigan), but <strong>long-run market expectations never budged</strong> — 10Y breakeven flat at ~2.3%, 5y5y forward ~2.3%, Michigan 5–10yr easing to 3.3%. So the oil shock raised long yields mostly <em>indirectly</em>, by hardening the "no cuts, maybe hikes" path and by adding to inflation <em>uncertainty</em> (a term-premium input) — not by raising the inflation the market actually prices for the next decade.</p>
+</div>
+
+<div class="chart-card">
+  <h4>Brent crude through the re-escalation</h4>
+  <p class="sub">$/barrel, dated settlements — the Jul 23 spike is what briefly priced two Fed hikes</p>
+  <div id="c-oil" class="chart"></div>
+  <p class="src-note">CNBC/EIA/Fortune/Capital.com dated reports. Not a continuous series.</p>
+</div>
+
+<h3>3 · Growth: strong enough to carry higher real yields</h3>
+<div class="prose">
+<p>The economy was bifurcated. Payrolls looked broken (−23k in July, −103k revisions) — but the unemployment rate <em>fell</em> to 4.1% because participation hit a 5-year low: a shrinking-labor-supply story, with jobless claims near 60-year lows (~203k). Meanwhile the demand side ran hot: Atlanta Fed GDPNow for Q3 sat at <strong>4–6%</strong>, ISM manufacturing hit 55.6 (best since May 2022), the August flash composite PMI 56.0, and consumer spending grew 3.4% in Q2. Equities agreed — 27 S&amp;P 500 record closes in 2026, the latest (7,798.99) on Aug 13, ending the window ~1% off the high. Strong growth with a supply-constrained labor market is exactly the mix that supports <em>higher real yields</em> — and it removes "growth scare" from the list of explanations. Yields did not rise because the economy was weak; they rose while it was strong.</p>
+</div>
+
+<h3>4 · Fiscal deficit &amp; Treasury supply: the long end's specific problem</h3>
+<div class="prose">
+<p>July's Monthly Treasury Statement (Aug 12) showed a <strong>$432B monthly deficit — the largest since March 2021</strong>; the 10-month FY2026 deficit ran ~$1.80T, ~10% above FY2025, and CBO raised its FY2026 projection to <strong>~$2.1T</strong>. A key twist: tariffs ran <em>in reverse</em> — after the Supreme Court struck down the IEEPA tariffs (Feb 2026), Treasury paid ~$100B in refunds and July net customs receipts were <em>negative</em> $8.55B, blowing a ~$250B hole in expected 2026 revenue. Gross debt crossed <strong>$40 trillion on Aug 18</strong>, months early. Supply pressed on the exact sector that was breaking: the Aug 13 30Y auction cleared at <strong>5.216%, the costliest since 2001</strong>; 20Y auctions tailed twice (graded D+ in July); Q3 borrowing was revised up $68B to $739B. Treasury's response — holding coupon sizes, leaning on bills ("T-bill and chill"), and then <strong>doubling long-end buybacks on Aug 19</strong> — is itself the strongest evidence that officials saw long-end demand as fragile. The buyback rally fizzled in two days.</p>
+</div>
+
+<h3>5 · Term premium: the measured wedge</h3>
+<div class="prose">
+<p>The NY Fed's ACM 10-year term premium averaged 0.513% in June and <strong>0.87% in July</strong> — a ~35bp jump, roughly the size of the entire net 10Y move — and stood at 0.80% in the latest daily print (Aug 13; the SF Fed's alternative model reads higher, ~1.33%). That is the wedge between "what the Fed does" and "what long bonds yield." Strategists said it plainly: Barclays called the rise <em>"less about inflation and more about the U.S. budget deficit, high levels of issuance related to AI competing with Treasurys, and higher term premiums."</em> The episode rhymes with October 2023's "term-premium tantrum" (10Y to 4.99% on deficit fears) far more than with any Fed cycle.</p>
+</div>
+
+<div class="chart-card">
+  <h4>ACM 10-year term premium</h4>
+  <p class="sub">%, NY Fed model (monthly averages; latest daily). The June→July jump is the cleanest measured driver of the selloff</p>
+  <div id="c-acm" class="chart"></div>
+  <p class="src-note">NY Fed ACM via FRED THREEFYTP10 / CEIC / MacroMicro. May &amp; June &amp; July are monthly averages; Aug 13 is the latest surfaced daily print. Model estimates vary (SF Fed: 1.33% on Aug 10).</p>
+</div>
+
+<h3>6 · AI capex: the new demand for capital</h3>
+<div class="prose">
+<p>The most 2026-specific driver: the same AI boom holding equities at records is now <em>competing with the Treasury for savings</em>. The four big hyperscalers guided to roughly <strong>$725B of combined 2026 capex</strong> (vs ~$410B in 2025, +77%), funded increasingly with debt: US corporate bond issuance ran <strong>~$1.7T year-to-date, +27% y/y</strong>, with hyperscaler issuance alone ~$159B by mid-2026 (vs a $28B/yr 2020–24 average) and Morgan Stanley projecting ~$570B of global AI-related debt in 2026. Barclays' arithmetic: AI-linked corporate supply added <strong>+$474B of net long-dated paper</strong> — more than offsetting a $440B <em>drop</em> in net Treasury coupon supply. A huge, credit-worthy borrower class bidding for the same duration buyers raises the price of long-term capital — that is, real yields and term premium. It's also the resolution of the equity–bond paradox: record stocks and a 5.3% long bond are the <em>same</em> shock (an investment boom) showing up with opposite signs in the two markets.</p>
+</div>
+
+<h3>7 · Global spillovers: everyone's fiscal story at once</h3>
+<div class="prose">
+<p>Japan's super-long selloff (30Y JGB above 4% for the first time, on PM Takaichi's fiscal expansion, BOJ tightening, and a yen so weak it took the <strong>first joint US–Japan intervention since 1998</strong> to slow it) mechanically raises hedged global yields and pulls Japanese capital home. The UK added a political fiscal premium (30Y gilts at reported 1998 highs under the new Burnham government); Germany issued record debt for defense at its costliest 30Y levels since 2011; France's OAT–Bund spread hit its widest since 2012. When every major issuer's long end cheapens together, no single market can rally alone — the correlation itself became a driver.</p>
+</div>
+
+<h3>The driver scorecard</h3>
+<div class="scrollx">
+<table class="board">
+  <tr><th>Candidate driver</th><th>Verdict</th><th>Key evidence</th></tr>
+  <tr><td><strong>Term premium / fiscal &amp; supply</strong></td><td><span class="chip major"><i></i>Major — the marginal driver</span></td><td class="mile">ACM +~35bp; record-cheap 30Y &amp; TIPS auctions; 20Y tails; $432B July deficit; $40T debt; Treasury forced into buybacks</td></tr>
+  <tr><td><strong>Fed expectations</strong></td><td><span class="chip major"><i></i>Major — front end &amp; belly</span></td><td class="mile">June dots erased the cut; 3 hike dissents; hike odds 55→82→42→58%; 2Y +19bp; Warsh's hawkish Jackson Hole</td></tr>
+  <tr><td><strong>AI capex / demand for capital</strong></td><td><span class="chip mod"><i></i>Moderate — structural, growing</span></td><td class="mile">$725B hyperscaler capex; +$474B net AI-linked bond supply ≥ Treasury coupon decline; $1.7T IG issuance YTD</td></tr>
+  <tr><td><strong>Growth</strong></td><td><span class="chip mod"><i></i>Moderate — permissive</span></td><td class="mile">GDPNow 4–6%; ISM 55.6; PMI 56.0; record equities. Enabled higher real yields; didn't time the move</td></tr>
+  <tr><td><strong>Global spillovers</strong></td><td><span class="chip mod"><i></i>Moderate — amplifier</span></td><td class="mile">Synchronized Aug 17–18 milestones (JGB &gt;4%, gilts '98 highs, Bund '11 highs); yen intervention; hedged-yield math</td></tr>
+  <tr><td><strong>Oil / Iran / inflation</strong></td><td><span class="chip mod"><i></i>Moderate — via the Fed path</span></td><td class="mile">Brent $100.69 → two hikes briefly priced; but 10Y breakeven flat ~2.34% — long-run expectations never moved</td></tr>
+  <tr><td><strong>Inflation <em>expectations</em> (long-run)</strong></td><td><span class="chip minor"><i></i>Minor / nil directly</span></td><td class="mile">Breakevens flat to lower over the window; 5y5y ~2.3%; Michigan 5–10yr 3.3% and easing</td></tr>
+</table>
+</div>
+
+<h3>The real question: Fed repricing or term-premium repricing?</h3>
+<div class="stories">
+  <div class="story">
+    <h4>If this were purely a monetary-policy repricing…</h4>
+    <ul>
+      <li><span class="m yes">✓ partly</span><span>Front end sells off as hikes get priced — <em>2Y +19bp, hike odds up; real, but modest</em></span></li>
+      <li><span class="m no">✗</span><span>Long end moves <em>less</em> than the belly (policy fades with horizon) — <em>instead the 30Y led at every extreme</em></span></li>
+      <li><span class="m no">✗</span><span>Yields track each data print tightly — <em>Barclays: supply pressures "overwhelm individual soft-data releases"</em></span></li>
+      <li><span class="m no">✗</span><span>Term-premium models stay flat — <em>ACM jumped ~35bp</em></span></li>
+    </ul>
+  </div>
+  <div class="story">
+    <h4>If this were a fiscal / term-premium repricing…</h4>
+    <ul>
+      <li><span class="m yes">✓</span><span>Bear steepening, long end leads — <em>30Y–2Y +38bp steeper at the peak</em></span></li>
+      <li><span class="m yes">✓</span><span>Real yields rise, breakevens don't — <em>+24–29bp real, ~0bp breakeven; record TIPS auction yields</em></span></li>
+      <li><span class="m yes">✓</span><span>Primary market strains: tails, high dealer takedown — <em>two 20Y tails; costliest 30Y since 2001; Treasury buybacks doubled</em></span></li>
+      <li><span class="m yes">✓</span><span>Global long ends move together — <em>US / UK / Japan / Germany milestones in the same 48 hours</em></span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="verdict-panel">
+  <h4>Verdict: a joint repricing — and you can see the seam</h4>
+  <p>The summer move was <strong>both things at once, in different parts of the curve</strong>. The front end and belly carried a genuine <em>hawkish policy repricing</em> (worth roughly half the 10-year's net move, on a reasonable pass-through of the 2Y's +19bp). The long end carried that <em>plus</em> a distinct <em>fiscal/term-premium repricing</em> — the ACM jump, the flat breakevens against record real yields, the auction tails and the buyback intervention are its fingerprints.</p>
+  <p>The cleanest natural experiment is <strong>August 7–18</strong>: payrolls printed −23k, the 2-year <em>rallied</em> to ~4.17, hike odds fell — a dovish impulse — and the 30-year still ran to a 19-year high of 5.33%. A pure Fed story cannot produce that divergence; a supply/term-premium story predicts it. And the mirror image on <strong>August 28</strong> confirms the split: Warsh's hawkish speech hit the <em>2-year</em> (+6bp) while the 30-year <em>fell</em> — policy news now moves the front of the curve, while the long end trades the deficit, the supply calendar, and its buyer base.</p>
+  <p>Finally, the market told you what this <em>wasn't</em>: with equities ~1% from records, credit spreads near multi-decade tights (IG ~80bp, HY ~275–281bp) and breakevens asleep, this was neither a growth scare nor an inflation de-anchoring. It was the price of duration going up — because the sellers of duration (governments, and now the AI build-out) multiplied faster than its buyers.</p>
+</div>
+
+<!-- ================= SECTION C ================= -->
+<h2 id="c"><span class="sec">+</span>Other macro currents worth naming</h2>
+<div class="cards">
+  <div class="card"><h4>The Fed-independence fight</h4><p>Kevin Warsh took the chair in May 2026 after a party-line confirmation; the July FOMC's 9–3 hike dissents doubled as a credibility protest. The Supreme Court (5–4, June 29) blocked the firing of Governor Lisa Cook, with litigation continuing — and the White House kept publicly demanding lower rates. An institutional risk premium is plausibly <em>inside</em> that term-premium number.</p></div>
+  <div class="card"><h4>The Bessent put (fiscal dominance?)</h4><p>Treasury doubling long-end buybacks on Aug 19 — explicitly after a 19-year-high yield print — was read by some as debt-management hygiene and by others as the fiscal authority doing yield-curve maintenance the central bank won't. The rally lasted two days; the debate will last longer.</p></div>
+  <div class="card"><h4>First joint yen rescue since 1998</h4><p>Japan's MOF (~$60B) and the US Treasury jointly bought yen in early August after 163.73/$. It worked for a week — the yen gave back half the gains — but it marked officialdom's fear of the weak-yen → JGB-selloff → global-long-end loop.</p></div>
+  <div class="card"><h4>Credit didn't blink</h4><p>IG spreads ~80–81bp (near 1998 tights) and HY ~275–281bp (2007-era tights) despite record IG supply. The bond market's stress was entirely in the <em>rates</em> leg, not the credit leg — consistent with a supply/term-premium story, not a recession trade.</p></div>
+  <div class="card"><h4>Gold high, dollar round-trip</h4><p>Gold traded ~$4,400–4,500/oz in late August (a 3-month high; below January's $5,589 war-shock record). The DXY rose to ~101.4 by late July on hawkish repricing, slid to ~98.6 into the yen intervention and Fed drama, then bounced to ~99.6 on Warsh's speech.</p></div>
+  <div class="card"><h4>The tariff refund hole</h4><p>The February Supreme Court ruling against the IEEPA tariffs turned a revenue line into an outflow: ~$100B refunded, three straight months of <em>negative</em> net customs receipts, ~$250B off 2026 revenue projections — a direct feed into the deficit-and-supply story above.</p></div>
+</div>
+
+<h2 id="m">Method, caveats &amp; sources</h2>
+<div class="prose">
+<p style="font-size:14px;color:var(--ink2)">Compiled from ~340 live web searches on Aug 29, 2026 by parallel research agents, with an adversarial verification pass. All figures are dated observations from the cited outlets (closes and intraday prints are mixed where noted); charts connect sparse dated points, not full daily series, so small 1–5bp discrepancies between outlets survive. The ACM term premium's latest surfaced daily print is Aug 13. One agent's claim that markets priced <em>cuts</em> after Jackson Hole was identified as contamination from 2025 coverage and discarded; the verified 2026 record is hike-tilted throughout. Korea's exact 10Y August level was not directly quoted in surfaced reports and is flagged in the table. Nothing here is investment advice.</p>
+</div>
+<h3 style="margin-top:26px">Key sources</h3>
+<div class="sources">
+  <p><strong>US yields &amp; auctions:</strong> <a href="https://www.cnbc.com/2026/08/18/treasury-yields-.html">CNBC — 30Y tops 5.33%, 19-year high (Aug 18)</a> · <a href="https://www.cnbc.com/2026/08/18/us-government-debt-yields-are-surging-at-a-bad-time-heres-whats-behind-the-move.html">CNBC — what's behind the surge</a> · <a href="https://www.advisorperspectives.com/dshort/updates/2026/08/28/treasury-yields-snapshot-august-28-2026">Advisor Perspectives — yields snapshot (Aug 28)</a> · <a href="https://www.bloomberg.com/news/articles/2026-08-13/us-braces-for-30-year-bond-auction-at-highest-yield-since-2001">Bloomberg — costliest 30Y sale since 2001</a> · <a href="https://www.crfb.org/blogs/treasury-auction-yield-hits-highest-25-years">CRFB — auction yield highest in 25 years</a></p>
+  <p><strong>Real yields &amp; breakevens:</strong> <a href="https://tipswatch.com/2026/07/23/10-year-tips-auction-gets-real-yield-of-2-438-a-great-result-for-investors/">TIPS Watch — 10Y TIPS at 2.438% real</a> · <a href="https://tipswatch.com/2026/08/20/30-year-tips-reopening-gets-real-yield-of-2-973-highest-in-nearly-25-years/">TIPS Watch — 30Y TIPS at 2.973%</a> · <a href="https://fred.stlouisfed.org/series/T10YIE">FRED T10YIE</a> · <a href="https://fred.stlouisfed.org/series/DFII10">FRED DFII10</a> · <a href="https://www.cfr.org/articles/what-the-treasurys-buyback-surprise-says-about-the-bond-market">CFR — the buyback surprise</a></p>
+  <p><strong>Fed &amp; policy path:</strong> <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm">Federal Reserve — July 29 statement (9–3)</a> · <a href="https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-federal-reserve-inflation.html">CNBC — Warsh at Jackson Hole</a> · <a href="https://www.cnbc.com/2026/08/28/treasury-yields-jackson-hole.html">CNBC — 2Y jumps on "work to do"</a> · <a href="https://www.bloomberg.com/news/articles/2026-08-17/goldman-says-markets-too-hawkish-on-betting-fed-will-hike-rates">Bloomberg — Goldman on hike pricing</a> · <a href="https://www.scotusblog.com/2026/06/court-prevents-trump-from-firing-fed-governor/">SCOTUSblog — Trump v. Cook</a></p>
+  <p><strong>Term premium:</strong> <a href="https://fred.stlouisfed.org/series/THREEFYTP10">FRED THREEFYTP10 (ACM)</a> · <a href="https://www.newyorkfed.org/research/data_indicators/term-premia-tabs">NY Fed term premia</a> · <a href="https://www.frbsf.org/research-and-insights/data-and-indicators/treasury-yield-premiums/">SF Fed yield premiums</a> · <a href="https://finance.yahoo.com/economy/policy/articles/ai-driving-treasury-yields-just-093000747.html">Bloomberg via Yahoo — "AI is driving up Treasury yields"</a></p>
+  <p><strong>Fiscal &amp; supply:</strong> <a href="https://www.cnbc.com/2026/08/12/us-budget-deficit-surged-in-july-to-highest-level-since-march-2021.html">CNBC — $432B July deficit</a> · <a href="https://www.cbo.gov/publication/62704">CBO — tariff projections update</a> · <a href="https://home.treasury.gov/news/press-releases/sb0590">Treasury — August refunding</a> · <a href="https://home.treasury.gov/news/press-releases/sb0607">Treasury — buyback expansion</a> · <a href="https://www.cbsnews.com/news/national-debt-tops-40-trillion-doubles/">CBS — debt tops $40T</a></p>
+  <p><strong>Inflation, oil &amp; Iran:</strong> <a href="https://www.cnbc.com/2026/07/23/brent-crude-tops-100-a-barrel-how-the-next-stop-could-be-120.html">CNBC — Brent tops $100</a> · <a href="https://www.cnbc.com/2026/08/12/cpi-inflation-report-july-2026.html">CNBC — July CPI</a> · <a href="https://www.cnbc.com/2026/08/26/feds-preferred-inflation-gauge-shows-core-prices-rose-3point3percent-annually-in-july.html">CNBC — core PCE 3.3%</a> · <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis">Hormuz crisis overview</a> · <a href="https://www.stlouisfed.org/on-the-economy/2026/aug/tariff-effects-inflation-stabilize-recent-months">St. Louis Fed — tariff effects</a></p>
+  <p><strong>Growth &amp; markets:</strong> <a href="https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html">CNBC — July payrolls −23k</a> · <a href="https://www.atlantafed.org/research-and-data/data/gdpnow">Atlanta Fed GDPNow</a> · <a href="https://www.fool.com/investing/2026/08/26/the-sp-500-has-hit-27-record-highs-in-2026-heres-w/">Motley Fool — 27 S&amp;P records</a> · <a href="https://www.etftrends.com/credit-spreads-historic-tights-now/">ETF Trends — spreads at historic tights</a></p>
+  <p><strong>Global:</strong> <a href="https://www.bloomberg.com/news/articles/2026-08-18/germany-is-set-to-sell-30-year-bonds-at-highest-yield-since-2011">Bloomberg — German 30Y at 2011 highs</a> · <a href="https://www.bloomberg.com/news/articles/2026-06-30/japan-s-super-long-bond-yields-climb-on-fiscal-concerns">Bloomberg — JGB super-longs</a> · <a href="https://www.bloomberg.com/news/articles/2026-08-19/korea-yield-curve-steepest-since-2021-as-long-bond-slump-deepens">Bloomberg — Korea curve steepest since 2021</a> · <a href="https://www.koreaherald.com/article/10853733">Korea Herald — BOK to 3%</a> · <a href="https://www.aljazeera.com/economy/2026/8/3/japan-and-us-confirm-rare-joint-intervention-to-prop-up-yen">Al Jazeera — joint yen intervention</a> · <a href="https://www.cnbc.com/2026/06/16/boj-rate-hike-historic-inflation.html">CNBC — BOJ to 1%</a></p>
+</div>
+
+<p class="footnote">Research note compiled Aug 29, 2026 from public reporting; dated observations as cited. Educational analysis — not investment advice.</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------------- data ---------------- */
+const Y2=[["2026-06-26",4.086],["2026-06-30",4.152],["2026-07-02",4.14],["2026-07-10",4.21],["2026-07-14",4.185],["2026-07-17",4.18],["2026-07-24",4.33],["2026-07-29",4.236],["2026-07-31",4.28],["2026-08-07",4.193],["2026-08-14",4.17],["2026-08-18",4.175],["2026-08-21",4.185],["2026-08-27",4.24],["2026-08-28",4.34]];
+const Y10=[["2026-06-26",4.372],["2026-06-30",4.441],["2026-07-02",4.49],["2026-07-10",4.56],["2026-07-14",4.583],["2026-07-17",4.55],["2026-07-24",4.69],["2026-07-29",4.671],["2026-07-31",4.75],["2026-08-07",4.639],["2026-08-14",4.68],["2026-08-18",4.706],["2026-08-19",4.637],["2026-08-21",4.704],["2026-08-27",4.68],["2026-08-28",4.73]];
+const Y30=[["2026-06-30",4.929],["2026-07-07",5.053],["2026-07-14",5.096],["2026-07-23",5.167],["2026-07-29",5.201],["2026-07-31",5.27],["2026-08-07",5.192],["2026-08-13",5.216],["2026-08-18",5.33],["2026-08-19",5.184],["2026-08-21",5.248],["2026-08-27",5.20],["2026-08-28",5.17]];
+const SP210=[["2026-06-26",28.6],["2026-06-30",28.9],["2026-07-02",35],["2026-07-10",35],["2026-07-14",39.8],["2026-07-17",37],["2026-07-24",36],["2026-07-29",43.5],["2026-07-31",47],["2026-08-07",44.6],["2026-08-14",51],["2026-08-18",53.1],["2026-08-21",51.9],["2026-08-27",44],["2026-08-28",39]];
+const SP302=[["2026-06-30",77.7],["2026-07-14",91.1],["2026-07-29",96.5],["2026-07-31",99],["2026-08-07",99.9],["2026-08-18",115.5],["2026-08-21",106.3],["2026-08-27",96],["2026-08-28",83]];
+const OIL=[["2026-06-29",73.21],["2026-06-30",75.02],["2026-07-08",76.3],["2026-07-23",100.69],["2026-08-03",83.51],["2026-08-05",79.15],["2026-08-17",88.31],["2026-08-21",94.39],["2026-08-25",88.24],["2026-08-28",88.0]];
+const ODDS=[["2026-07-02",55],["2026-07-23",82],["2026-08-07",44],["2026-08-12",42],["2026-08-25",41],["2026-08-27",35.4],["2026-08-28",57.5]];
+const ACM=[["2026-05-31",0.667],["2026-06-30",0.513],["2026-07-31",0.87],["2026-08-13",0.80]];
+
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const P=s=>new Date(s+"T12:00:00Z").getTime();
+const X0=P("2026-06-24"), X1=P("2026-08-30");
+const MN=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"];
+const monthTicks=(x0,x1)=>{const out=[];for(let m=1;m<=9;m++){const t=P("2026-0"+m+"-01");if(t>=x0&&t<=x1)out.push([t,MN[m]]);}return out;};
+const fmtD=s=>{const m=+s.slice(5,7),d=+s.slice(8,10);return MN[m]+" "+d;};
+
+function el(tag,attrs,parent){const e=document.createElementNS("http://www.w3.org/2000/svg",tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function div(cls,parent){const e=document.createElement("div");if(cls)e.className=cls;if(parent)parent.appendChild(e);return e;}
+function niceTicks(lo,hi,n){const span=hi-lo,step0=span/Math.max(1,n),mag=Math.pow(10,Math.floor(Math.log10(step0)));let step=mag;for(const m of[1,2,2.5,5,10]){if(step0<=m*mag){step=m*mag;break;}}const t=[];for(let v=Math.ceil(lo/step)*step;v<=hi+1e-9;v+=step)t.push(+v.toFixed(6));return t;}
+
+/* ---------- generic time-series line chart ---------- */
+function lineChart(id,cfg){
+  const host=document.getElementById(id);
+  const xa=cfg.x0?P(cfg.x0):X0, xb=cfg.x1?P(cfg.x1):X1;
+  const render=()=>{
+    host.textContent="";
+    const W=Math.max(320,host.clientWidth),H=cfg.h||340;
+    const m={t:18,r:cfg.mr||74,b:30,l:44};
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":cfg.aria||""});svg.style.width="100%";host.appendChild(svg);
+    let lo=Infinity,hi=-Infinity;
+    cfg.series.forEach(s=>s.pts.forEach(p=>{lo=Math.min(lo,p[1]);hi=Math.max(hi,p[1]);}));
+    if(cfg.y0!==undefined)lo=Math.min(lo,cfg.y0);
+    const pad=(hi-lo)*0.09||1;lo-=pad;hi+=pad;
+    if(cfg.yMin!==undefined)lo=cfg.yMin; if(cfg.yMax!==undefined)hi=cfg.yMax;
+    const x=t=>m.l+(t-xa)/(xb-xa)*(W-m.l-m.r);
+    const y=v=>m.t+(hi-v)/(hi-lo)*(H-m.t-m.b);
+    niceTicks(lo,hi,5).forEach(v=>{
+      el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),style:"stroke:var(--grid);stroke-width:1"},svg);
+      const t=el("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",style:"fill:var(--muted);font:11px var(--mono)"},svg);
+      t.textContent=cfg.yFmt?cfg.yFmt(v):v;
+    });
+    monthTicks(xa,xb).forEach(([d,lab])=>{
+      const t=el("text",{x:x(d),y:H-8,"text-anchor":"middle",style:"fill:var(--muted);font:11px var(--mono)"},svg);t.textContent=lab;
+    });
+    el("line",{x1:m.l,x2:W-m.r,y1:y(lo)+0.5,y2:y(lo)+0.5,style:"stroke:var(--axis);stroke-width:1"},svg);
+    cfg.series.forEach(s=>{
+      const d=s.pts.map((p,i)=>(i?"L":"M")+x(P(p[0])).toFixed(1)+" "+y(p[1]).toFixed(1)).join("");
+      el("path",{d,fill:"none",style:`stroke:var(${s.c});stroke-width:2;stroke-linejoin:round;stroke-linecap:round`},svg);
+      const lastP=s.pts[s.pts.length-1];
+      el("circle",{cx:x(P(lastP[0])),cy:y(lastP[1]),r:4,style:`fill:var(${s.c});stroke:var(--surface);stroke-width:2`},svg);
+      if(cfg.labelLast!==false){
+        const t=el("text",{x:x(P(lastP[0]))+9,y:y(lastP[1])+(s.dy||4),style:"fill:var(--ink);font:600 11.5px var(--sans)"},svg);
+        t.textContent=s.name+" "+(cfg.yFmt?cfg.yFmt(lastP[1]):lastP[1]);
+      }
+    });
+    (cfg.ann||[]).forEach(a=>{
+      const ax=x(P(a.d)),ay=y(a.v);
+      el("circle",{cx:ax,cy:ay,r:4.5,style:`fill:var(${a.c||"--s2"});stroke:var(--surface);stroke-width:2`},svg);
+      const t=el("text",{x:ax+(a.dx??0),y:ay+(a.dy??-12),"text-anchor":a.anchor||"middle",style:"fill:var(--ink2);font:600 11px var(--sans)"},svg);
+      t.textContent=a.label;
+    });
+    /* hover */
+    const tip=div("tip",host);
+    const cross=el("line",{y1:m.t,y2:H-m.b,style:"stroke:var(--axis);stroke-width:1;opacity:0"},svg);
+    const dates=[...new Set(cfg.series.flatMap(s=>s.pts.map(p=>p[0])))].sort();
+    const move=ev=>{
+      const r=svg.getBoundingClientRect(),sx=W/r.width;
+      const px=(ev.clientX-r.left)*sx;
+      let best=null,bd=1e18;
+      dates.forEach(d=>{const dx=Math.abs(x(P(d))-px);if(dx<bd){bd=dx;best=d;}});
+      if(best==null||bd>60){leave();return;}
+      cross.setAttribute("x1",x(P(best)));cross.setAttribute("x2",x(P(best)));cross.style.opacity=1;
+      tip.textContent="";
+      const td=div("td",tip);td.textContent=fmtD(best);
+      cfg.series.forEach(s=>{
+        const p=s.pts.find(q=>q[0]===best);if(!p)return;
+        const row=div("row",tip);
+        const k=div("k",row);k.style.borderTopColor=css(s.c);
+        const v=div("v",row);v.textContent=cfg.yFmt?cfg.yFmt(p[1]):p[1];
+        const n=div("n",row);n.textContent=s.name;
+      });
+      tip.style.display="block";
+      const hr=host.getBoundingClientRect();
+      let tx=x(P(best))/sx+14;if(tx+tip.offsetWidth>hr.width-8)tx=x(P(best))/sx-tip.offsetWidth-14;
+      tip.style.left=tx+"px";tip.style.top=Math.max(4,(ev.clientY-hr.top)-tip.offsetHeight-12)+"px";
+    };
+    const leave=()=>{tip.style.display="none";cross.style.opacity=0;};
+    svg.addEventListener("pointermove",move);svg.addEventListener("pointerleave",leave);
+    /* table view */
+    const det=document.createElement("details");det.className="tbl";
+    const sum=document.createElement("summary");sum.textContent="Table view";det.appendChild(sum);
+    const wrapT=div("scrollx",det);
+    const tb=document.createElement("table");wrapT.appendChild(tb);
+    const hr2=document.createElement("tr");
+    ["Date",...cfg.series.map(s=>s.name)].forEach(h=>{const th=document.createElement("th");th.textContent=h;hr2.appendChild(th);});
+    tb.appendChild(hr2);
+    dates.forEach(d=>{
+      const tr=document.createElement("tr");
+      const td0=document.createElement("td");td0.textContent=fmtD(d);tr.appendChild(td0);
+      cfg.series.forEach(s=>{const p=s.pts.find(q=>q[0]===d);const td=document.createElement("td");td.textContent=p?(cfg.yFmt?cfg.yFmt(p[1]):p[1]):"–";tr.appendChild(td);});
+      tb.appendChild(tr);
+    });
+    host.appendChild(det);
+  };
+  render();
+  let lw=host.clientWidth;
+  new ResizeObserver(()=>{if(host.clientWidth!==lw){lw=host.clientWidth;render();}}).observe(host);
+}
+
+/* ---------- horizontal bar: net change ---------- */
+function changeChart(id){
+  const host=document.getElementById(id);
+  const rows=[{l:"3M bill",v:10},{l:"2-year",v:19},{l:"5-year",v:20},{l:"10-year",v:29},{l:"30-year",v:24,peak:40}];
+  const render=()=>{
+    host.textContent="";
+    const W=Math.max(320,host.clientWidth),rowH=44,m={t:14,r:120,b:26,l:76},H=m.t+rows.length*rowH+m.b;
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Net change in yields by maturity, basis points"});host.appendChild(svg);
+    const max=44;
+    const x=v=>m.l+v/max*(W-m.l-m.r);
+    [0,10,20,30,40].forEach(v=>{
+      el("line",{x1:x(v),x2:x(v),y1:m.t,y2:H-m.b,style:"stroke:var(--grid);stroke-width:1"},svg);
+      const t=el("text",{x:x(v),y:H-8,"text-anchor":"middle",style:"fill:var(--muted);font:11px var(--mono)"},svg);t.textContent="+"+v;
+    });
+    rows.forEach((r,i)=>{
+      const yy=m.t+i*rowH+rowH/2;
+      const lab=el("text",{x:m.l-10,y:yy+4,"text-anchor":"end",style:"fill:var(--ink);font:600 13px var(--sans)"},svg);lab.textContent=r.l;
+      const bh=20;
+      el("rect",{x:x(0),y:yy-bh/2,width:Math.max(2,x(r.v)-x(0)-2),height:bh,rx:4,style:"fill:var(--s1)"},svg);
+      const vt=el("text",{x:x(r.v)+8,y:yy+4,style:"fill:var(--ink);font:600 12.5px var(--sans)"},svg);vt.textContent="+"+r.v+"bp";
+      if(r.peak){
+        const px=x(r.peak);
+        el("path",{d:`M${px} ${yy-7} L${px+6} ${yy} L${px} ${yy+7} L${px-6} ${yy} Z`,style:"fill:var(--s2);stroke:var(--surface);stroke-width:1.5"},svg);
+        const pt=el("text",{x:px,y:yy-13,"text-anchor":"middle",style:"fill:var(--ink2);font:600 11px var(--sans)"},svg);pt.textContent="Aug 18 peak +40bp";
+      }
+    });
+    el("line",{x1:x(0)+0.5,x2:x(0)+0.5,y1:m.t,y2:H-m.b,style:"stroke:var(--axis);stroke-width:1"},svg);
+  };
+  render();
+  let lw=host.clientWidth;
+  new ResizeObserver(()=>{if(host.clientWidth!==lw){lw=host.clientWidth;render();}}).observe(host);
+}
+
+/* ---------- grouped vertical bars: decomposition ---------- */
+function decompChart(id){
+  const host=document.getElementById(id);
+  const groups=[{g:"10-year",bars:[{l:"Nominal Δ",v:24,c:"--s1"},{l:"Real yield Δ",v:24,c:"--s2"},{l:"Breakeven Δ",v:0,c:"--s3"}]},
+                {g:"30-year",bars:[{l:"Nominal Δ",v:27,c:"--s1"},{l:"Real yield Δ",v:29,c:"--s2"},{l:"Breakeven Δ",v:-2,c:"--s3"}]}];
+  const render=()=>{
+    host.textContent="";
+    const W=Math.max(320,host.clientWidth),H=300,m={t:24,r:16,b:44,l:44};
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Decomposition of yield change into real and breakeven, basis points"});host.appendChild(svg);
+    const lo=-6,hi=32;
+    const y=v=>m.t+(hi-v)/(hi-lo)*(H-m.t-m.b);
+    [-5,0,5,10,15,20,25,30].forEach(v=>{
+      el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),style:"stroke:var(--grid);stroke-width:1"},svg);
+      const t=el("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",style:"fill:var(--muted);font:11px var(--mono)"},svg);t.textContent=(v>0?"+":"")+v;
+    });
+    el("line",{x1:m.l,x2:W-m.r,y1:y(0)+0.5,y2:y(0)+0.5,style:"stroke:var(--axis);stroke-width:1"},svg);
+    const gw=(W-m.l-m.r)/groups.length,bw=Math.min(58,gw/4.2);
+    groups.forEach((G,gi)=>{
+      const cx=m.l+gw*gi+gw/2;
+      G.bars.forEach((b,bi)=>{
+        const bx=cx+(bi-1)*(bw+8)-bw/2;
+        const h=Math.abs(y(b.v)-y(0));
+        const top=b.v>=0?y(b.v):y(0);
+        const rx=b.v>=0?`M${bx} ${top+h} L${bx} ${top+4} Q${bx} ${top} ${bx+4} ${top} L${bx+bw-4} ${top} Q${bx+bw} ${top} ${bx+bw} ${top+4} L${bx+bw} ${top+h} Z`
+                        :`M${bx} ${top} L${bx} ${top+h-4} Q${bx} ${top+h} ${bx+4} ${top+h} L${bx+bw-4} ${top+h} Q${bx+bw} ${top+h} ${bx+bw} ${top+h-4} L${bx+bw} ${top} Z`;
+        if(h>2)el("path",{d:rx,style:`fill:var(${b.c})`},svg); else el("rect",{x:bx,y:y(0)-1.5,width:bw,height:3,rx:1.5,style:`fill:var(${b.c})`},svg);
+        const vt=el("text",{x:bx+bw/2,y:b.v>=0?top-7:top+h+15,"text-anchor":"middle",style:"fill:var(--ink);font:600 12px var(--sans)"},svg);
+        vt.textContent=(b.v>0?"+":"")+b.v;
+      });
+      const gt=el("text",{x:cx,y:H-14,"text-anchor":"middle",style:"fill:var(--ink);font:700 13px var(--sans)"},svg);gt.textContent=G.g;
+    });
+  };
+  render();
+  let lw=host.clientWidth;
+  new ResizeObserver(()=>{if(host.clientWidth!==lw){lw=host.clientWidth;render();}}).observe(host);
+  const det=document.createElement("details");det.className="tbl";
+  det.innerHTML="<summary>Table view</summary><table><tr><th>Tenor</th><th>Nominal Δ</th><th>Real Δ</th><th>Breakeven Δ</th></tr><tr><td>10Y</td><td>+24bp</td><td>+24bp</td><td>0bp</td></tr><tr><td>30Y</td><td>+27bp</td><td>+29bp</td><td>−2bp</td></tr></table>";
+  host.parentElement.insertBefore(det,host.nextSibling);
+}
+
+/* ---------- legends ---------- */
+function legend(hostId,items){
+  const card=document.getElementById(hostId).parentElement;
+  const l=div("legend");
+  items.forEach(it=>{
+    const li=div("li",l);
+    const k=div(it.rect?"key-rect":"key-line",li);
+    if(it.rect)k.style.background=css(it.c);else k.style.borderTopColor=css(it.c);
+    li.appendChild(document.createTextNode(it.n));
+  });
+  card.insertBefore(l,document.getElementById(hostId));
+}
+
+/* ---------- build ---------- */
+legend("c-yields",[{n:"2-year",c:"--s1"},{n:"10-year",c:"--s2"},{n:"30-year",c:"--s3"}]);
+lineChart("c-yields",{
+  aria:"US 2, 10 and 30 year Treasury yields June to August 2026",
+  h:380,mr:104,
+  series:[{name:"2Y",c:"--s1",pts:Y2},{name:"10Y",c:"--s2",pts:Y10},{name:"30Y",c:"--s3",pts:Y30}],
+  yFmt:v=>v.toFixed(2)+"%",
+  ann:[{d:"2026-08-18",v:5.33,label:"5.33% · 19-yr high",c:"--s3",dy:-12}]
+});
+changeChart("c-change");
+legend("c-spreads",[{n:"10Y − 2Y",c:"--s1"},{n:"30Y − 2Y",c:"--s2"}]);
+lineChart("c-spreads",{
+  aria:"Curve spreads in basis points",
+  h:320,mr:118,
+  series:[{name:"10Y−2Y",c:"--s1",pts:SP210},{name:"30Y−2Y",c:"--s2",pts:SP302,dy:2}],
+  yFmt:v=>Math.round(v)+"bp",
+  ann:[{d:"2026-08-18",v:115.5,label:"peak steepness",c:"--s2",dy:-12,anchor:"end",dx:6}]
+});
+legend("c-decomp",[{n:"Nominal yield Δ",c:"--s1",rect:true},{n:"Real yield Δ",c:"--s2",rect:true},{n:"Breakeven Δ",c:"--s3",rect:true}]);
+decompChart("c-decomp");
+lineChart("c-odds",{
+  aria:"Probability of a September 2026 Fed hike",
+  h:300,mr:64,yMin:0,yMax:100,
+  series:[{name:"Sept hike odds",c:"--s1",pts:ODDS}],
+  yFmt:v=>Math.round(v)+"%",labelLast:false,
+  ann:[{d:"2026-07-23",v:82,label:"oil spike: ~82%",c:"--s1"},
+       {d:"2026-08-07",v:44,label:"−23k payrolls",c:"--s1",dy:20},
+       {d:"2026-08-28",v:57.5,label:"Warsh: 58%",c:"--s1",anchor:"end",dx:6}]
+});
+lineChart("c-oil",{
+  aria:"Brent crude price, dollars per barrel",
+  h:300,mr:64,
+  series:[{name:"Brent",c:"--s2",pts:OIL}],
+  yFmt:v=>"$"+Math.round(v),labelLast:false,
+  ann:[{d:"2026-07-23",v:100.69,label:"$100.69 · tanker attack",c:"--s2"},
+       {d:"2026-08-17",v:88.31,label:"ceasefire memo expires",c:"--s2",dy:22}]
+});
+lineChart("c-acm",{
+  aria:"ACM ten year term premium",
+  h:280,mr:64,y0:0.4,x0:"2026-05-25",
+  series:[{name:"ACM 10Y term premium",c:"--s1",pts:ACM}],
+  yFmt:v=>v.toFixed(2)+"%",labelLast:false,
+  ann:[{d:"2026-06-30",v:0.513,label:"0.51% June avg",c:"--s1",dy:22},
+       {d:"2026-07-31",v:0.87,label:"0.87% July avg",c:"--s1"},
+       {d:"2026-08-13",v:0.80,label:"0.80% · Aug 13",c:"--s1",anchor:"end",dx:6,dy:22}]
+});
+})();
+</script>

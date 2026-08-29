@@ -1,0 +1,93 @@
+# fed-path
+
+## SUMMARY
+The Fed's target range sat at 3.50%-3.75% throughout the window, but everything around it changed. The FOMC held rates on June 17, 2026 (unanimous) and again on July 29, 2026 — that one by a 9-3 vote, with Hammack, Kashkari and Logan dissenting in favor of a 25bp HIKE, the first three-way directional dissent since 2016. The June SEP was a hawkish shock: the median end-2026 dot rose to 3.8% (erasing a previously projected cut), with 3.6% for end-2027; nine of 19 officials penciled in at least one 2026 hike, against inflation forecasts raised to 3.6% headline / 3.3% core PCE. Leadership also changed: Kevin Warsh was sworn in as the 17th Fed chair on May 22, 2026 after a party-line Senate confirmation (Fetterman the lone Democratic aye); Powell stayed on as a governor. On June 29 the Supreme Court ruled 5-4 in Trump v. Cook that Trump could not fire Governor Lisa Cook without notice and a hearing. White House pressure persisted — Trump demanded lower rates on Aug 19 while calling Warsh's work "great," and Treasury Secretary Bessent intervened directly in the bond market on Aug 19, doubling long-end buybacks to $4bn+ after the 30-year hit a 19-year high of 5.31% (Aug 17); the relief rally fizzled within two days. Short-rate expectations were NOT anchored — they repriced violently, and in the hawkish direction. In late June (June 26) the 2-year sat at 4.07% with markets pricing roughly a 29% July-hike and ~55-63% September-hike probability. The July 23 oil spike (Houthi attacks on Saudi tankers) drove September hike odds to ~82% and December to 92% — nearly two hikes priced. Soft data then unwound it: June CPI (-0.4% m/m, July 14) cut July-hike odds to 17%; the -23k July payrolls print (Aug 7) dropped September hike odds to 44%; in-line July CPI (3.4% y/y, Aug 12) to 42%; by Aug 17 Goldman noted the first fully-priced hike had slipped from Dec 2026 to Jan 2027. A September CUT was never in play — priced at ~1% on Aug 18, with cut odds for all of 2026 near zero (Polymarket: 57% chance of zero cuts) and a hike roughly four times likelier than a cut. Warsh's Jackson Hole debut (Friday Aug 28) re-lit the hawkish trade: he warned better summer inflation prints don't show improved underlying trends and the Fed "will have work to do," while pointedly refusing forward guidance. The 2-year jumped 6.6bp to 4.298% (one-month high), September hike odds rose to ~46% from 35% a day earlier, and the dollar gained 0.4%. Net over the window, the 2-year rose ~23bp (4.07% June 26 → 4.298% Aug 28), swinging between ~4.14% and ~4.30% around each data point. Bottom line: end-2026 implied policy moved from cut-tilted earlier in 2026 to no-cut-plus-partial-hike; the market now prices a hold-with-hike-risk path (first full 25bp hike by Jan 2027, per Goldman/Bloomberg), versus a similar-but-softer hawkish tilt in late June — with a full round trip through "two hikes priced" in between. This was a material, event-driven repricing, not anchoring.
+
+## DATA POINTS
+- Fed funds target range (FOMC decision, unanimous hold) = 3.50%-3.75% (2026-06-17) [CNBC / Federal Reserve FOMC minutes]
+- June SEP median fed funds rate, end-2026 / end-2027 / end-2028 = 3.8% / 3.6% / 3.4% (2026-06-17) [FRED Blog / federalreserve.gov projections]
+- June dot plot split on 2026 path = 8 no change, 1 cut, 9 at least one hike (2026-06-17) [CNBC]
+- 2-year Treasury yield (late-June baseline) = 4.07% (2026-06-26) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield = 4.38% (2026-06-26) [Advisor Perspectives Treasury Yields Snapshot]
+- Trump v. Cook Supreme Court ruling (Trump cannot fire Fed Gov. Cook without notice/hearing) = 5-4 denial of stay (2026-06-29) [SCOTUSblog / supremecourt.gov / CNBC]
+- June nonfarm payrolls (vs consensus) = +57,000 vs +115,000 expected (2026-07-02) [CNBC]
+- 2-year Treasury yield after June jobs report = 4.137% (-2bp) (2026-07-02) [CNBC]
+- Market-implied July hike odds after June jobs (from prior day) = ~20% (from ~29%) (2026-07-02) [CNBC / CME FedWatch]
+- Market-implied September hike odds = ~55% (2026-07-02) [CNBC / CME FedWatch]
+- June CPI (m/m, y/y) = -0.4% m/m, 3.5% y/y (vs 3.8% expected) (2026-07-14) [CNBC]
+- 2-year Treasury yield after June CPI = 4.185% (-7bp) (2026-07-14) [CNBC]
+- July hike odds after June CPI (from Monday July 13) = 17% (from 42%) (2026-07-14) [CME FedWatch via CNBC]
+- September hike odds after June CPI (from prior day) = 63% (from >75%) (2026-07-14) [CME FedWatch via CNBC]
+- September hike odds after Red Sea oil spike (from ~53% a week earlier) = ~82% (2026-07-23) [CME FedWatch via CNBC]
+- December 2026 hike odds = 92% (2026-07-23) [CME FedWatch via CNBC]
+- S&P 500 (oil-shock selloff) = 7,408.30 (-1.21%) (2026-07-23) [CNBC]
+- Fed funds target range (FOMC hold, 9-3; Hammack/Kashkari/Logan dissent for +25bp) = 3.50%-3.75% (2026-07-29) [Federal Reserve statement / CNBC / CNN]
+- 2-year Treasury yield after July FOMC = 4.236% (-4bp) (2026-07-29) [CNBC]
+- 10-year / 30-year Treasury yield after July FOMC = 4.677% (+7bp) / above 5.2% (highest since 2007) (2026-07-29) [CNBC]
+- July nonfarm payrolls (vs consensus; prior 2-month revision) = -23,000 vs +80,000 expected; -103,000 revisions (2026-08-07) [CNBC / NBC News / TD Economics]
+- 2-year Treasury yield after July jobs report = 4.193% (-5bp) (2026-08-07) [CNBC]
+- September / October hike odds after July jobs = 44% / 58.3% (2026-08-07) [CME FedWatch via CNBC]
+- July CPI (m/m, y/y headline) = +0.1% m/m, 3.4% y/y (2026-08-12) [CNBC]
+- September hike odds after July CPI = 42% (2026-08-12) [CME FedWatch via CNBC]
+- 2-year / 10-year Treasury yield = 4.17% / 4.68% (2026-08-14) [Advisor Perspectives Treasury Yields Snapshot]
+- 30-year Treasury yield (19-year high) = above 5.31% (2026-08-17) [CNBC]
+- First fully-priced 25bp hike in futures curve = shifted from Dec 2026 (a week earlier) to Jan 2027 (2026-08-17) [Bloomberg / Yahoo Finance (Goldman Sachs note)]
+- September 2026 rate CUT odds = ~1% (Kalshi 'maintain' ~70%) (2026-08-18) [defirate.com Kalshi/Polymarket data]
+- Probability of zero cuts in 2026 (prediction market) = 57% (2026-08-18) [Polymarket via defirate.com]
+- Treasury buyback intervention (Bessent): long-end buybacks doubled = $2bn to at-least-$4bn per operation, 10-30yr, Sept 9-Nov 4 (2026-08-19) [CNBC / Bloomberg / Euronews]
+- 30-year Treasury yield after buyback announcement = 5.196% (-9bp) (2026-08-19) [CNBC]
+- 30-year Treasury yield as buyback rally fizzled = 5.273% (+3bp) (2026-08-21) [CNBC]
+- Probability Fed maintains rates at Sept 16 FOMC = 58.6% (2026-08-25) [CME FedWatch via growbeansprout.com]
+- 2-year Treasury yield (pre-Jackson Hole) = 4.24% (2026-08-27) [CNBC / Federal Reserve H.15]
+- 2-year Treasury yield after Warsh Jackson Hole speech (one-month high) = 4.298% (+6.6bp) (2026-08-28) [CNBC / Yahoo Finance]
+- September hike odds after Warsh Jackson Hole speech (from prior day) = 45.7% (from 35.4%) (2026-08-28) [CME FedWatch via CNBC]
+- 10-year / 30-year Treasury yield after Jackson Hole speech = 4.672% flat / 5.16% (-3bp) (2026-08-28) [Yahoo Finance / CNBC]
+- US dollar index after Jackson Hole speech = 99.55 (+0.4%) (2026-08-28) [Yahoo Finance]
+- July PCE inflation (y/y headline / core) = 3.7% / 3.3% (2026-08-28) [rateprobability.com citing BEA release]
+- Kevin Warsh sworn in as 17th Fed chair (Powell chair pro tempore May 15-22; Powell remains governor) = Term to May 21, 2030; party-line Senate confirmation, Fetterman only Democrat in favor (2026-05-22) [federalreserve.gov / Al Jazeera / Spectrum News]
+
+## SOURCES
+- https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html
+- https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm
+- https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm
+- https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html
+- https://www.cnn.com/2026/07/29/business/live-news/federal-reserve-interest-rate-07-29-26
+- https://fredblog.stlouisfed.org/2026/06/fomc-summary-of-economic-projections-june-2026/
+- https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm
+- https://www.federalreserve.gov/newsevents/pressreleases/other20260515a.htm
+- https://www.aljazeera.com/economy/2026/5/22/kevin-warsh-sworn-in-as-new-us-fed-chair
+- https://spectrumlocalnews.com/us/snplus/politics/2026/05/22/kevin-warsh-sworn-in-jerome-powell-trump-white-house-ceremony-clarence-thomas
+- https://www.scotusblog.com/2026/06/court-prevents-trump-from-firing-fed-governor/
+- https://www.supremecourt.gov/opinions/25pdf/25a312_5468.pdf
+- https://www.cnbc.com/2026/06/29/supreme-court-lisa-cook-trump-federal-reserve.html
+- https://www.advisorperspectives.com/dshort/updates/2026/06/26/treasury-yields-snapshot-june-26-2026
+- https://www.cnbc.com/2026/07/02/us-treasury-yields-rise-as-investors-await-june-jobs-report.html
+- https://www.cnbc.com/2026/07/02/jobs-report-june-2026-.html
+- https://www.cnbc.com/2026/07/14/consumer-price-index-inflation-report-june-2026.html
+- https://www.cnbc.com/2026/07/14/treasury-yields-rise-as-fed-rate-hike-expectations-grow.html
+- https://www.cnbc.com/2026/07/23/fed-interest-rate-odds-oil-jobless-claims.html
+- https://www.forbes.com/sites/simonmoore/2026/07/23/markets-see-chance-fed-hikes-next-week-at-july-meeting/
+- https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html
+- https://www.cnbc.com/2026/08/07/treasury-yields-steady-ahead-of-key-nonfarm-payrolls-jobless-data.html
+- https://www.cnbc.com/2026/08/07/odds-the-fed-hikes-in-september-tumble-following-big-july-jobs-miss.html
+- https://www.cnbc.com/2026/08/12/cpi-inflation-report-july-2026.html
+- https://www.cnbc.com/2026/08/12/treasury-yields-inflation-cpi-data.html
+- https://www.advisorperspectives.com/dshort/updates/2026/08/14/treasury-yields-snapshot-august-14-2026
+- https://www.cnbc.com/2026/08/17/treasury-yields-federal-reserve-fomc-minutes.html
+- https://www.bloomberg.com/news/articles/2026-08-17/goldman-says-markets-too-hawkish-on-betting-fed-will-hike-rates
+- https://finance.yahoo.com/economy/policy/articles/odds-fed-rate-hike-fall-083935313.html
+- https://defirate.com/prediction-markets/fed-decision-odds/
+- https://www.cnbc.com/2026/08/19/treasury-announces-upscaled-buyback-operation-for-longer-term-debt-sending-yields-lower.html
+- https://www.cnbc.com/2026/08/19/bessent-treasury-buybacks-yields-warsh-fed.html
+- https://www.cnbc.com/2026/08/20/bond-yields-edge-higher-as-traders-digest-treasury-debt-buyback-plan.html
+- https://www.cnbc.com/2026/08/21/treasury-yields-bonds-inflation-rates.html
+- https://www.euronews.com/business/2026/08/21/bessent-vows-bigger-buybacks-after-bond-yields-erased-the-us-treasurys-relief-rally
+- https://www.cnbc.com/2026/08/19/trump-bemoans-fed-interest-rate-policy-says-us-should-be-paying-much-less.html
+- https://growbeansprout.com/tools/fedwatch
+- https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-federal-reserve-inflation.html
+- https://www.cnbc.com/2026/08/28/treasury-yields-jackson-hole.html
+- https://finance.yahoo.com/economy/policy/articles/rate-hike-expectations-rise-warsh-144023525.html
+- https://www.washingtonpost.com/business/2026/08/28/fed-chair-warsh-speaks-jackson-hole-conference/
+- https://www.nbcnews.com/business/economy/trumps-kevin-warsh-jackson-hole-inflation-rcna594135
+- https://rateprobability.com/fed
+- https://www.bondsavvy.com/fixed-income-investments-blog/fed-dot-plot

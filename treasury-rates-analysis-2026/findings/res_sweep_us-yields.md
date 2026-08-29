@@ -1,0 +1,106 @@
+# us-yields
+
+## SUMMARY
+Between end-June and late-August 2026, the Treasury curve sold off in a pronounced bear-steepener, with the move concentrated in the long end until the final week, when Jackson Hole shifted pressure to the front end. On June 30 (CNBC), the 2-year stood at 4.152%, 10-year 4.441%, 30-year 4.929%; the June 5-year auction had cleared at 4.200%. Yields ground higher through July as $100+ Brent (Red Sea tanker attacks), a hot core PCE (3.3-3.4%), and the Fed's 9-3 hold at 3.50-3.75% on July 29 (three dissents favoring a hike; Chair Kevin Warsh's credibility questioned) rekindled inflation fears: 10-year 4.56% (Jul 10), 4.583% (Jul 14), above 4.70% on Jul 23 (highest since Jan 2025), 4.75% at the Jul 31 close; the 30-year went 5.096% (Jul 14), 5.167% (Jul 23), 5.201% on Fed day (intraday 5.244%, first 2007-era high), and ~5.27% at the July close. August brought the climax: after a surprise 23,000 July payroll loss briefly knocked yields down on Aug 7 (10Y 4.639%, 30Y 5.192%), a $25B 30-year auction on Aug 13-14 cleared at 5.216% (highest auction yield since 2001, per CRFB), the 30-year topped 5.31% on Aug 17 and then 5.33% on Aug 18 — touching 5.323% intraday (one report cites a 5.35% weekly high), its highest since June 2007, a 19-year high — verified by CNBC and others; it eased to 5.285% later that session. Treasury Secretary Bessent's surprise doubling of debt buybacks (Aug 19) knocked the 30-year down ~10bp to 5.184%, but the rally fizzled (30Y back to 5.248% Aug 21). The window closed with Warsh's hawkish Jackson Hole speech (Aug 28) spiking September hike odds to 57.5% and jumping the 2-year ~6bp to 4.298% intraday (4.34% at the Treasury close per Advisor Perspectives) while the 30-year actually fell 2bp to 5.168%. Latest levels (Aug 27 closes): 3M bill ~3.83%, 2Y 4.24%, 5Y 4.40%, 10Y 4.68%, 30Y 5.20%. Net change June 30 to Aug 27/28: 2-year +9bp (to Aug 27; +19bp to the Aug 28 close), 5-year roughly +20bp (vs the June auction stop), 10-year +24bp (+29bp to Aug 28), 30-year +27bp (and +40bp at the Aug 18 peak). The 3-month bill barely moved (~3.73% July average to 3.83% Aug 28), anchored by the Fed's fifth consecutive hold. Verdict on concentration: the sell-off was clearly concentrated in the long end and belly — the 30-year led throughout (new 19-year highs, +40bp at peak) while the 2-year was nearly flat until the Aug 28 Warsh-driven front-end pop; the 2s10s spread widened from ~29bp (computed, Jun 30) to ~39-46bp (Aug 27-28), and 5s30s widened from ~73bp to ~80bp (computed), i.e., a fiscal/inflation-premium-driven bear steepening rather than a Fed-repricing front-end move — until the very last day of the window.
+
+## DATA POINTS
+- 2-year Treasury yield = 4.086% (2026-06-26) [CNBC (2-year yield falls as Kashkari backs rate increase)]
+- 2-year Treasury yield = 4.152% (2026-06-30) [CNBC (Treasury yields move higher on June's final trading day)]
+- 10-year Treasury yield = 4.372% (2026-06-26) [CNBC]
+- 10-year Treasury yield = 4.441% (2026-06-30) [CNBC]
+- 30-year Treasury yield = 4.929% (2026-06-30) [CNBC]
+- 5-year Treasury auction stop yield (proxy for late-June 5Y level) = 4.200% (2026-06-25) [cryptobriefing.com auction recap (June 2026 5-year auction)]
+- 2-year Treasury yield (close) = 4.14% (2026-07-02) [Advisor Perspectives Treasury Yields Snapshot (intraday 4.137% per CNBC)]
+- 10-year Treasury yield (close) = 4.49% (2026-07-02) [Advisor Perspectives (intraday 4.485% per CNBC)]
+- 2-year Treasury yield (close) = 4.21% (2026-07-10) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield (close) = 4.56% (2026-07-10) [Advisor Perspectives Treasury Yields Snapshot]
+- 2-year Treasury yield = 4.185% (2026-07-14) [CNBC (yields slide after June CPI -0.4% m/m, 3.5% y/y)]
+- 10-year Treasury yield = 4.583% (2026-07-14) [CNBC]
+- 30-year Treasury yield = 5.096% (2026-07-14) [CNBC]
+- 2-year Treasury yield (close) = 4.18% (2026-07-17) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield (close) = 4.55% (2026-07-17) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield = above 4.70% (highest since Jan 15, 2025) (2026-07-23) [CNBC (Brent above $100 on Red Sea attacks)]
+- 30-year Treasury yield = 5.167% (2026-07-23) [CNBC]
+- 2-year Treasury yield (close) = 4.33% (2026-07-24) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield (close) = 4.69% (2026-07-24) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield (Fed decision day, +7bp) = 4.671% (2026-07-29) [CNBC (Fed holds 3.50%-3.75%, 9-3 vote, three hawkish dissents)]
+- 30-year Treasury yield (Fed decision day; intraday high 5.244%, highest since July 2007) = 5.201% (2026-07-29) [CNBC / Bloomberg]
+- 5-year Treasury auction stop yield = 4.408% (2026-07-28) [cryptobriefing.com auction recap (July 2026 5-year auction)]
+- 2-year Treasury yield (close) = 4.28% (2026-07-31) [Advisor Perspectives (intraday 4.273% per CNBC)]
+- 10-year Treasury yield (close) = 4.75% (2026-07-31) [Advisor Perspectives (intraday 4.71% per CNBC)]
+- 30-year Treasury yield (close) = 5.27% (2026-07-31) [Chase Insights article (intraday 5.249% per CNBC)]
+- 2-year Treasury yield (after -23k July payrolls) = 4.193% (2026-08-07) [CNBC (Treasury yields drop after surprise jobs loss)]
+- 10-year Treasury yield = 4.639% (2026-08-07) [CNBC]
+- 30-year Treasury yield = 5.192% (2026-08-07) [CNBC]
+- 3-month T-bill yield = 3.74% (2026-08-06) [TradingEconomics (US 3 Month Bill Yield)]
+- 30-year Treasury auction high yield (highest since 2001) = 5.216% (2026-08-14) [CRFB (Committee for a Responsible Federal Budget), $25B 30-year auction]
+- 2-year Treasury yield (close) = 4.17% (2026-08-14) [Advisor Perspectives Treasury Yields Snapshot]
+- 10-year Treasury yield (close) = 4.68% (2026-08-14) [Advisor Perspectives Treasury Yields Snapshot]
+- 30-year Treasury yield = topped 5.31% (19-year high) (2026-08-17) [CNBC]
+- 30-year Treasury yield PEAK (verified): topped 5.33%, touched 5.323% intraday, highest since June 2007 (19-year high); one report cites 5.35% weekly intraday high; eased to 5.285% later that session = 5.323%-5.33% (intraday peak) (2026-08-18) [CNBC (Aug 18) / Asia Business Daily / Motley Fool]
+- 10-year Treasury yield = 4.706% (2026-08-18) [CNBC]
+- 2-year Treasury yield = 4.175% (2026-08-18) [CNBC]
+- 30-year Treasury yield (-10bp after Bessent doubles Treasury buybacks to at least $4B) = 5.184% (2026-08-19) [CNBC / NBC News]
+- 10-year Treasury yield = 4.637% (2026-08-19) [CNBC]
+- 2-year Treasury yield = 4.185% (2026-08-21) [CNBC (buyback rally fizzles)]
+- 10-year Treasury yield = 4.704% (2026-08-21) [CNBC]
+- 30-year Treasury yield = 5.248% (2026-08-21) [CNBC]
+- 2-year Treasury yield = 4.24% (2026-08-27) [StreetStats / centralbank.watch (Forbes Advisor same day: 10Y 4.67%)]
+- 5-year Treasury yield = 4.40% (Forbes: 4.38%) (2026-08-27) [StreetStats / Forbes Advisor]
+- 10-year Treasury yield = 4.68% (2026-08-27) [StreetStats / centralbank.watch]
+- 30-year Treasury yield = 5.20% (FRED DGS30: 5.19%) (2026-08-27) [StreetStats / Forbes / FRED DGS30]
+- 2-year Treasury yield (Warsh Jackson Hole speech, +6bp intraday to 4.298%; Treasury close) = 4.34% (2026-08-28) [Advisor Perspectives snapshot (close) / CNBC (intraday)]
+- 10-year Treasury yield (close; intraday 4.676% per CNBC) = 4.73% (2026-08-28) [Advisor Perspectives Treasury Yields Snapshot / CNBC]
+- 30-year Treasury yield (intraday, -2bp) = 5.168% (2026-08-28) [CNBC]
+- 5-year Treasury yield = 4.35% (2026-08-28) [primerates.com Treasury Yield Curve monitor]
+- 3-month T-bill yield = 3.83% (2026-08-28) [TradingEconomics (US 3 Month Bill Yield)]
+- 3-month T-bill secondary market rate, monthly average (discount basis) = 3.73% (2026-07-31) [FRED TB3MS (July 2026 average)]
+- 2s10s spread = +29bp (COMPUTED: 4.441-4.152) (2026-06-30) [Computed from CNBC June 30 levels]
+- 2s10s spread = +46bp (2026-08-27) [centralbank.watch US yield curve monitor]
+- 2s10s spread = +39bp (COMPUTED: 4.73-4.34, post-Warsh front-end selloff) (2026-08-28) [Computed from Advisor Perspectives Aug 28 closes]
+- 5s30s spread = ~+73bp (COMPUTED: 30Y 4.929 minus June 5Y auction stop 4.200; approximate) (2026-06-30) [Computed from CNBC + auction data]
+- 5s30s spread = +80bp (COMPUTED: 5.20-4.40) (2026-08-27) [Computed from StreetStats Aug 27 levels]
+- NET CHANGE 2-year (Jun 30 4.152% to Aug 27 4.24% / Aug 28 close 4.34%) = +9bp to Aug 27; +19bp to Aug 28 close (COMPUTED) (2026-08-28) [Computed from CNBC / StreetStats / Advisor Perspectives]
+- NET CHANGE 5-year (June auction 4.200% to Aug 27 4.40%) = approximately +20bp (COMPUTED; note end-June leg is an auction stop, not a close) (2026-08-27) [Computed from auction data / StreetStats]
+- NET CHANGE 10-year (Jun 30 4.441% to Aug 27 4.68% / Aug 28 close 4.73%) = +24bp to Aug 27; +29bp to Aug 28 close (COMPUTED) (2026-08-28) [Computed from CNBC / StreetStats / Advisor Perspectives]
+- NET CHANGE 30-year (Jun 30 4.929% to Aug 27 5.20%; +40bp at Aug 18 peak of 5.33%) = +27bp to Aug 27 (+40bp at peak) (COMPUTED) (2026-08-27) [Computed from CNBC / StreetStats / FRED]
+- Fed funds target range (held 5th consecutive meeting, 9-3 vote) = 3.50%-3.75% (2026-07-29) [CNBC Fed meeting recap]
+- September Fed rate-hike odds after Warsh Jackson Hole speech = 57.5% (from 35.4% a day earlier) (2026-08-28) [CNBC citing CME FedWatch]
+
+## SOURCES
+- https://www.cnbc.com/2026/06/30/treasury-yields-jobs-data-june.html
+- https://www.cnbc.com/2026/06/26/treasury-yields-edge-lower-as-energy-prices-slide.html
+- https://www.cnbc.com/2026/07/02/us-treasury-yields-rise-as-investors-await-june-jobs-report.html
+- https://www.advisorperspectives.com/dshort/updates/2026/07/02/treasury-yields-snapshot-july-2-2026
+- https://www.advisorperspectives.com/dshort/updates/2026/07/10/treasury-yields-snapshot-july-10-2026
+- https://www.cnbc.com/2026/07/14/treasury-yields-rise-as-fed-rate-hike-expectations-grow.html
+- https://www.advisorperspectives.com/dshort/updates/2026/07/17/treasury-yields-snapshot-july-17-2026
+- https://www.cnbc.com/2026/07/23/treasury-yields-oil-prices-jobless-claims.html
+- https://www.advisorperspectives.com/dshort/updates/2026/07/24/treasury-yields-snapshot-july-24-2026
+- https://www.cnbc.com/2026/07/29/treasury-yields-fed-interest-rates.html
+- https://www.cnbc.com/2026/07/31/treasury-yields-inflation-interest-rates-federal-reserve.html
+- https://www.advisorperspectives.com/dshort/updates/2026/07/31/treasury-yields-snapshot-july-31-2026
+- https://www.chase.com/personal/investments/learning-and-insights/article/30-year-treasury-yields-in-2026-considerations-for-investors
+- https://www.cnbc.com/2026/08/07/treasury-yields-steady-ahead-of-key-nonfarm-payrolls-jobless-data.html
+- https://www.crfb.org/blogs/treasury-auction-yield-hits-highest-25-years
+- https://www.advisorperspectives.com/dshort/updates/2026/08/14/treasury-yields-snapshot-august-14-2026
+- https://www.cnbc.com/2026/08/17/treasury-yields-federal-reserve-fomc-minutes.html
+- https://www.cnbc.com/2026/08/18/treasury-yields-.html
+- https://www.asiae.co.kr/en/article/2026081804123220091
+- https://www.fool.com/investing/2026/08/23/the-30-year-treasury-yield-just-touched-5-33-a-19-year-high-here-s-what-history-says-about-the-last-time-long-rates-sat-above-5/
+- https://www.cnbc.com/2026/08/19/treasury-announces-upscaled-buyback-operation-for-longer-term-debt-sending-yields-lower.html
+- https://www.nbcnews.com/business/economy/bonds-bessent-treasury-debt-repurchase-rcna593319
+- https://www.cnbc.com/2026/08/20/bond-yields-edge-higher-as-traders-digest-treasury-debt-buyback-plan.html
+- https://www.cnbc.com/2026/08/21/treasury-yields-bonds-inflation-rates.html
+- https://www.forbes.com/advisor/investing/treasury-rates/
+- https://streetstats.finance/rates/treasuries/
+- https://centralbank.watch/tools/yield-curve/us-yield-curve/
+- https://www.advisorperspectives.com/dshort/updates/2026/08/28/treasury-yields-snapshot-august-28-2026
+- https://www.cnbc.com/2026/08/28/treasury-yields-jackson-hole.html
+- https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-federal-reserve-inflation.html
+- https://primerates.com/primerate/treasury-yield-curve/
+- https://tradingeconomics.com/united-states/3-month-bill-yield
+- https://fred.stlouisfed.org/series/TB3MS
+- https://fred.stlouisfed.org/series/DGS30
+- https://cryptobriefing.com/treasury-5-year-yield-70b-auction/
+- https://www.cnbc.com/2026/07/29/fed-meeting-today-live-updates.html
