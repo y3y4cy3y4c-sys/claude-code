@@ -2,7 +2,9 @@
 
 **Trade memo — as of Friday, August 28, 2026 (entry Monday, August 31)**
 
-**The trade: DV01-neutral 5s30s Treasury curve steepener — long 5y UST / short 30y UST, entered at +75bp, target +150bp, stop +45bp, 6–12 month horizon, positive carry.**
+**The trade: DV01-neutral 5s30s Treasury curve steepener — long 5y UST / short 30y UST, entered around +75–80bp (H.15 Aug 27 close: +81), initial target +110–120bp with a +150bp stretch, stop +45–50bp, 6–12 month horizon, positive carry.**
+
+*(Revised Aug 29 after quant validation — see the Addendum at the end for the mechanics check, the 2s30s/5s30s/10s30s comparison, and the eight-cycle backtest behind the revised targets.)*
 
 This memo is structured the way the assignment demands: the trade is not chosen until the research conclusions from Q1–3 force it. Sections 1–3 restate those conclusions with the current data behind them. Sections 4–9 run the required chain: **View → Mispricing → Instrument → Catalyst → Payoff → Risk**. If any of the Q1–3 conclusions is wrong, Section 8 says exactly which market observation would falsify it and what happens to the position.
 
@@ -52,8 +54,8 @@ Note the contrast with the naive version of this view. "The Fed will eventually 
 
 Three related mispricings, one of which is an outright internal inconsistency in market pricing:
 
-1. **The front end prices a phantom hiking cycle.** The 2y at ~4.31–4.36% and 5y at ~4.40–4.45% sit ~70–80bp above the funds midpoint (3.625%), embedding ~35% odds of a September hike and roughly a full hike by end-2026, with essentially no probability weight on the labor-driven cutting scenario within 12 months. Against –23k payrolls, falling participation, and 3.2% wage growth, that distribution is skewed the wrong way. You are being paid to fade it — at post-speech levels, at a local extreme in hike pricing.
-2. **The long end prices too little structural risk premium relative to the fiscal path** — or at minimum, no compression is on offer. At 5.20% the 30y is not "cheap to short" on level, but the flow backdrop (refinancing wall, fizzled buybacks, TGA gimmicks that *add* future supply) means its risks remain one-sided versus the front end. The point of shorting it here is not that it must sell off; it is that it **cannot rally far**, which is exactly what a curve trade needs from its short leg.
+1. **The front end prices a phantom hiking cycle.** The 2y at 4.24% (4.31–4.36 post-speech) and 5y at 4.38% sit ~60–75bp above the funds midpoint (3.625%), embedding ~35% odds of a September hike and roughly a full hike by end-2026, with essentially no probability weight on the labor-driven cutting scenario within 12 months. Against –23k payrolls, falling participation, and 3.2% wage growth, that distribution is skewed the wrong way. You are being paid to fade it — at post-speech levels, at a local extreme in hike pricing.
+2. **The long end prices too little structural risk premium relative to the fiscal path** — or at minimum, no compression is on offer. At 5.19% (real yield 2.96%) the 30y is not "cheap to short" on level, but the flow backdrop (refinancing wall, fizzled buybacks, TGA gimmicks that *add* future supply) means its risks remain one-sided versus the front end. The point of shorting it here is not that it must sell off; it is that it **cannot rally far**, which is exactly what a curve trade needs from its short leg.
 3. **The internal inconsistency — the cleanest tell.** The front end prices hikes *because inflation won't come down*; 5y TIPS breakevens at **2.28%** (10y: 2.32%) price average CPI collapsing to ~2.3% *starting from 3.4% with disinflation stalled*. Both cannot be true. Either inflation persists (breakevens are too low, and eventual policy will be too easy — long-end-bearish) or inflation rolls over because the economy rolls over (the hike pricing dies and the front end rallies hard). **The 5s30s steepener collects in both resolutions.** That is what makes it the internally consistent trade rather than a directional coin flip.
 
 ## 4. INSTRUMENT — derived by elimination, not picked
@@ -83,25 +85,25 @@ It loses only in **bear flattening** — hikes actually delivered *and* believed
 
 | Leg | Instrument | Face | DV01 |
 |---|---|---|---|
-| Long | 5y Treasury note (~4.45%) | +$44.9mm | +$20.0k/bp |
-| Short | 30y Treasury bond (~5.20%) | –$13.2mm | –$20.0k/bp |
+| Long | 5y Treasury note (4.38%, H.15 Aug 27) | +$44.9mm | +$20.0k/bp |
+| Short | 30y Treasury bond (5.19%, H.15 Aug 27) | –$13.2mm | –$20.0k/bp |
 
 *(DV01 per $1mm face: 5y ≈ $445, 30y ≈ $1,520.)*
 
-**Futures implementation** (no repo lines needed for the mock book): long **FVZ6** (5y note future, DV01 ≈ $43/contract) vs short **USZ6 / WNZ6** (bond / ultra-bond future; ultra preferred — CTD tracks the 25–30y sector). Ratio ≈ 6.5–7 FV per 1 WN; ~465 FVZ6 vs ~67 WNZ6 for the size above. Swap alternative: receive 5y SOFR / pay 30y SOFR, same DV01s, cleaner rolldown math, adds swap-spread basis.
+**Futures implementation** (no repo lines needed for the mock book): long **FV** (5y note future) vs short **WN** (Ultra Bond — deliverable remaining maturity ≥25y, so it tracks the 30y; the classic bond contract's 15–25y basket does not). Legs are sized **dynamically to equalize DV01 off the current cheapest-to-deliver securities and conversion factors** — CTD switches change the ratio, so no fixed contract ratio is quoted. Swap alternative: receive 5y SOFR / pay 30y SOFR, same DV01s, cleaner rolldown math, adds swap-spread basis.
 
 **Entry: 5s30s ≈ +75bp.** Friday's hawkish-speech reaction (2y up 6–11bp, long end *lower* — a bear-flattening) handed the trade a better entry than the +80bp of midweek. We are fading the market at a local extreme in hike pricing, not chasing steepening.
 
 **Carry and rolldown — the trade pays you to wait:**
 
-- Long 5y funds at repo ≈ 3.65%: +(4.45 – 3.65) × $44.9mm ≈ **+$359k/yr**
-- Short 30y: –(5.20 – 3.65) × $13.2mm ≈ **–$205k/yr**
-- Rolldown: 5y rolls down ~8bp/yr toward the 4y point (+~$160k); 30y roll ≈ flat (–~$10k)
-- **Net carry + roll ≈ +$300k/yr ≈ +15bp of curve per year (≈ +1.2bp/month)**
+- Computed by aging both legs one year and repricing them on today's (unchanged) curve, financed at repo ≈ 3.65% — not the coupon-minus-repo shortcut (`carry_roll_tenor_comparison.py`):
+- Running: +$125k/yr net (long 5y earns 73bp over repo on $44.9mm; short 30y costs 154bp on $13.2mm)
+- Rolldown: +$71k/yr (5y rolls to a ~4.34% 4y point; the 30y roll is ~zero because 20s30s is flat at 5.18/5.19)
+- **Net carry + roll ≈ +$196k/yr ≈ +9.8bp of curve per year (≈ +0.8bp/month).** Magnitude is assumption-sensitive (repo specialness, financing spreads, futures calendar rolls); the *sign* is robust while funds sit below the entire coupon curve.
 
 This is the quiet edge of doing the trade *now* rather than in 2025: with the funds rate below the entire coupon curve (no inversion at the front), the steepener is **positive carry** — the position no longer bleeds while waiting for the Fed, which is what killed early steepeners in prior cycles.
 
-**Sizing.** Risk budget: 60bp of NAV at the stop → $600k / 30bp adverse move → **$20k/bp curve DV01** (the table above). Checks against the fund's risk limits: 5s30s daily vol ≈ 3–3.5bp → 95% 1-day VaR ≈ $100–115k ≈ **0.10–0.12% of NAV** (limit 2%); net duration ≈ 0 (level-immunized); a rough Kelly on §7's scenario tree (p≈0.75, win/loss ≈ 1.8) gives f* ≈ 0.6 — half-Kelly ≈ 0.3 — so the 0.6%-of-NAV loss-at-stop is conservative even after haircutting the probabilities for estimation error.
+**Sizing.** Risk budget: 60bp of NAV at the stop → $600k / 30bp adverse move → **$20k/bp curve DV01** (the table above). Checks against the fund's risk limits: 5s30s daily vol ≈ 3–3.5bp → 95% 1-day VaR ≈ $100–115k ≈ **0.10–0.12% of NAV** (limit 2%); net duration ≈ 0 (level-immunized). Sizing is risk-budget-based only — no Kelly-style optimization is claimed, because the scenario probabilities in §7 are subjective priors, not estimated frequencies.
 
 ## 6. CATALYST — what closes the gap, and when
 
@@ -126,19 +128,19 @@ Scenario tree, 6–12 month horizon, from +75bp entry (curve P&L at $20k/bp; car
 
 | Scenario | Prob. | 5y | 30y | 5s30s | Curve P&L |
 |---|---|---|---|---|---|
-| **A. Base — hawkish hold, hike premium bleeds, labor softens; partial cut-pricing by Q1-27** | 45% | 4.00 | 5.08 | **+108 → +133** | +$0.7–1.2mm |
+| **A. Base — hawkish hold, hike premium bleeds, labor softens; partial cut-pricing by Q1-27** | ~45% | 4.00 | 5.10 | **+110 → +133** | +$0.6–1.1mm |
 | **B. Hard landing — payrolls go deeply negative; even this Fed cuts** | 20% | 3.30 | 4.95 | **+165** | +$1.8mm |
 | **C. Stagflation — Hormuz re-shuts, oil $110+; Fed hikes once but long end blows out** | 10% | 4.80 | 5.70 | **+90** | +$0.3mm |
-| **D. Credible tightening — hikes delivered and believed; bear flattening** | 20% | 4.85 | 5.25 | +40 → **stopped at +45** | –$0.6mm |
+| **D. Credible tightening — hikes delivered and believed; bear flattening** | ~20% | 4.85 | 5.25 | +40 → **stopped at +45–50** | –$0.6mm |
 | **E. Bull flattening — global risk-off haven bid to 30y while Fed refuses to ease** | 5% | 4.30 | 4.85 | +55 | –$0.4mm |
 
-- **Expected value ≈ +35bp of curve ≈ +$700k, plus carry ≈ +$150–300k → ≈ +0.8–1.0% of NAV** on 0.6% at risk.
-- **Asymmetry:** ~2.5–3:1 (win scenarios +33 to +90bp vs. a hard stop at –30bp), with the probability mass (75%) on the winning side *because the trade wins in opposed macro outcomes* (A, B are disinflationary; C is inflationary).
-- **Target +150bp** (take half at +115bp). For context, the last three easing cycles carried 5s30s to between roughly +150bp and +300bp; +150 does not require a recession, only the death of the priced hiking cycle plus a normal cut cycle getting priced against a supply-pinned long end.
+- **Probabilities are subjective priors that rank the scenarios — no point-estimate EV is claimed from them.** What can be stated: risk to the stop is –30bp (–$0.6mm, –0.6% NAV); the initial target (+110–120) is +32–42bp of curve — regaining the 2025 steepness, which the backtest shows the median cut-delivering cycle achieved within 12 months; the +150 stretch (+72bp, ~2.4:1) sits below every deep-cycle peak level on record (+170 to +295).
+- **The shape that matters:** the trade wins in opposed macro resolutions (A and B are disinflationary, C is inflationary) and loses only where the thesis is genuinely wrong (D, and the small E tail).
+- **Take-profit plan:** scale out through +110–120; hold a stretch tranche for +150 only while the labor data keeps deteriorating (the deep-cycle condition).
 
 ## 8. RISK — where the view is wrong, and what it costs
 
-**The stop: 5s30s +45bp (–30bp), ≈ –$600k, –0.6% NAV.** That is roughly where a delivered September hike plus hawkish guidance (scenario D) would take the spread. The stop is placed where the *thesis* is falsified, not at an arbitrary distance: a curve flattening through +45 means the market believes in the hiking cycle, which means Q1's political-constraint argument was wrong.
+**The stop: 5s30s +45–50bp (–30bp from entry), ≈ –$600k, –0.6% NAV.** That is roughly where a delivered September hike plus hawkish guidance (scenario D) would take the spread. The stop is placed where the *thesis* is falsified, not at an arbitrary distance: a curve flattening through the band means the market believes in the hiking cycle, which means Q1's political-constraint argument was wrong. The 1998 precedent (insurance cuts → re-hike) flattened 5s30s 50bp in a year; the stop caps this trade's version of that path at –30.
 
 **Thesis falsifiers — exit on the information, before the stop if they hit:**
 
@@ -169,10 +171,68 @@ It is not the core position for one reason: **scenario B.** The hard-landing out
 |---|---|---|---|
 | Fed funds target | 3.50–3.75% (held 9–3, three hike dissents) | July payrolls | –23k (U3 4.1%, participation-driven) |
 | 2y UST | 4.31–4.36% (post-Warsh) | AHE y/y | +3.2% (slowest since May 2021) |
-| 5y UST | ~4.40–4.45% | Core PCE y/y (Jul) | 3.3% (headline 3.7%) |
+| 5y UST | 4.38% (H.15 Aug 27) | Core PCE y/y (Jul) | 3.3% (headline 3.7%) |
 | 10y UST | 4.67–4.68% | CPI y/y (Jul) | 3.4% |
 | 30y UST | 5.18–5.27% (2026 high: highest since 2007) | 5y / 10y breakeven | 2.28% / 2.32% |
 | **5s30s** | **≈ +75bp (post-speech)** | WTI / Brent | ~$82–87 / ~$89 (Hormuz flows 15–16mmbd vs 22–24 pre-war) |
 | Sep-26 hike odds | ~30–38% futures; ~53% Polymarket | Buybacks | $69bn Aug 6–Nov 5; long-end ops doubled to ≥$4bn; TGA (~$1T) floated |
 
 **Primary sources:** July FOMC decision and dissents ([CNBC](https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html), [Federal Reserve statement](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm)); Warsh Jackson Hole keynote and market reaction ([Federal Reserve](https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm), [CNBC](https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-federal-reserve-inflation.html), [CNBC yields](https://www.cnbc.com/2026/08/28/treasury-yields-jackson-hole.html), [Washington Post](https://www.washingtonpost.com/business/2026/08/28/fed-chair-warsh-speaks-jackson-hole-conference/)); Warsh confirmation ([NPR](https://www.npr.org/2026/05/13/nx-s1-5816235/kevin-warsh-federal-reserve-chair-jerome-powell)); July jobs report ([CNBC](https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html), [NBC](https://www.nbcnews.com/business/economy/july-2026-jobs-report-rcna591138), [BLS](https://www.bls.gov/news.release/empsit.nr0.htm)); July CPI/PCE ([TD Economics](https://economics.td.com/us-cpi), [Kiplinger](https://www.kiplinger.com/investing/economy/cpi-report-july-2026-what-to-expect)); yields ([Advisor Perspectives snapshot](https://www.advisorperspectives.com/dshort/updates/2026/08/14/treasury-yields-snapshot-august-14-2026), [CNBC](https://www.cnbc.com/2026/08/21/treasury-yields-bonds-inflation-rates.html), [FRED DGS2/DGS5/DGS10/DGS30](https://fred.stlouisfed.org/series/DGS30)); breakevens ([FRED T5YIE](https://fred.stlouisfed.org/series/T5YIE), [T10YIE](https://fred.stlouisfed.org/series/T10YIE)); hike odds ([KuCoin/Polymarket](https://www.kucoin.com/news/flash/polymarket-prices-53-odds-of-fed-rate-hike-in-september-2026-vs-32-in-futures), [Chase](https://www.chase.com/personal/investments/learning-and-insights/article/september-2026-rate-hike-now-expected-amid-energy-shocks)); refunding and buybacks ([Treasury QRA](https://home.treasury.gov/news/press-releases/sb0590), [buyback upsizing](https://home.treasury.gov/news/press-releases/sb0607), [Reuters via Yahoo](https://finance.yahoo.com/economy/policy/articles/us-treasury-double-sizes-debt-134308742.html), [CNBC TGA report](https://www.cnbc.com/2026/08/24/bessent-1-trillion-treasury-general-account-bond-buybacks.html), [Bloomberg](https://www.bloomberg.com/news/articles/2026-08-19/long-dated-treasuries-rally-as-treasury-boosts-bond-buybacks)); oil/Hormuz ([CNBC](https://www.cnbc.com/2026/08/10/oil-prices-today-brent-wti-hormuz-trump-iran.html), [Al Jazeera](https://www.aljazeera.com/economy/2026/8/10/oil-prices-climb-as-iranian-demands-cloud-outlook-for-strait-of-hormuz)).
+
+---
+
+## Addendum (Aug 29, 2026) — Quant validation: mechanics, tenor choice, and the backtest
+
+*Added after a quant-consistency review of the Aug-28 memo. Changes made to the memo above: entry restated as +75–80bp (H.15 Aug 27 close: +81); initial target restructured to +110–120 with +150 as a stretch; stop widened to a +45–50 band; carry recomputed by aged-bond repricing (+9.8bp/yr, previously +15); the fixed futures ratio replaced by dynamic CTD-based DV01 sizing; the Kelly calculation and point-estimate EV removed as false precision.*
+
+### A1. What the position actually bets on
+
+DV01-neutral, the P&L is **P&L ≈ DV01 × (Δy30 − Δy5)** — the win condition is simply Δy30 > Δy5. The 5y does not need to rally and the 30y does not need to sell off:
+
+| Scenario | Δ5y | Δ30y | Result |
+|---|---:|---:|---|
+| Bull steepener | −50bp | −10bp | +40bp → win |
+| Bear steepener | +20bp | +60bp | +40bp → win |
+| Bear flattener | +60bp | +20bp | −40bp → lose |
+| Bull flattener | −20bp | −60bp | −40bp → lose |
+
+### A2. Why the 5y, not the 2y (or the 10y) — quantified on the Aug-27 curve
+
+The purest Fed instrument is the 2y; the answer to "why not 2s30s?" is horizon: this is a 6–12-month view about the **medium-term policy path**, not the next FOMC. Quantified (DV01-neutral at $20k/bp per leg; carry+roll by aged-bond repricing on the unchanged curve; beta = median deep-cycle peak steepening vs 5s30s from the backtest):
+
+| Pair | Front yield | Gross notional | Static carry+roll, 12m | Deep-cycle peak beta | Character |
+|---|---:|---:|---:|---:|---|
+| 2s30s | 4.24% | $118.6mm | +29bp | 1.62× | Purest next-FOMC bet; the "carry" IS the hike premium (realized only if no hikes); ~2× the balance sheet |
+| **5s30s** | 4.38% | $58.2mm | **+9.8bp** | 1.00× | ~62% of 2s30s's payoff on ~half the gross; carry positive without being purely the Fed bet |
+| 10s30s | 4.67% | $38.5mm | +7.5bp | 0.33× | Both legs term-premium duration; keeps a third of the payoff — RV, not the macro trade |
+
+> "I chose 5s30s because five years is long enough to capture a repricing of the medium-term Fed path, while thirty years gives the cleanest exposure to the fiscal, term-premium and structural capital-demand pressures that are increasingly independent of monetary policy."
+
+### A3. Backtest — 5s30s through eight easing cycles (entry at first cut, bp of curve)
+
+Reconstructed quarterly checkpoints from the historical record (underlying series: FRED H.15 daily CMTs; this environment's network policy blocked a live pull — levels ±10–15bp, the 1984-86 cycle ±25–30bp, 30y after Feb-2002 is a long-bond proxy; peaks cross-checked against published anchors). Code and data: `backtest_5s30s_easing_cycles.py`; workbook: `5s30s_Backtest_TenorComparison.xlsx`.
+
+| Cycle | Kind | Cuts (bp) | @T0 | +12m | +24m | Peak Δ | @mo | Worst |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 1984–86 | deep, disinflation, no recession | 562 | +30 | +90 | +40 | +90 | 12 | 0 |
+| 1989–92 | deep, recession | 681 | −10 | +10 | +70 | +180 | 36 | −15 |
+| 1995–96 | shallow, insurance | 75 | +60 | −5 | −10 | +5 | 6 | −10 |
+| 1998–99 | shallow → re-hiked | 75 | +80 | **−50** | — | 0 | 0 | −50 |
+| 2001–03 | deep, recession | 550 | +55 | +55 | +140 | +195 | 30 | 0 |
+| 2007–10 | deep, GFC | 512 | +65 | +70 | +110 | +230 | 38 | 0 |
+| 2019–21 | mid-cycle → COVID | 225 | +69 | +30 | +52 | +80 | 20 | −4 |
+| 2024–26 | gradual → paused (live) | 175 | +55 | +55 | — | +60 | 15 | −10 |
+
+**Findings that changed the trade above:**
+
+1. **Hit rate 6/8 positive at 12m (median +43bp)**; deep cycles peaked at a median **+180bp**, but at a median **~18 months** — steepeners are marathon trades, which is why positive carry matters.
+2. **The failure mode is the shallow cycle**: 1995 went nowhere; 1998 (insurance cuts → re-hike) lost **50bp in a year** — today's bear case, and the reason the stop and the Board-vote falsifier exist.
+3. **Target calibration**: +110–120 = regaining the 2025 steepness (the curve traded +101 in Jun-2025, ~+110 late 2025, before 2026 hike pricing flattened it to +81) — it requires cuts to resume, not a recession. +150 sits **below every deep-cycle peak level** (+170 to +295).
+4. **Entry context, honestly**: pre-positioning 6 months before first cuts was the historical sweet spot (median +33bp into T0). Entering 23 months in, mid-pause, leans on the 1990-style resolution (pause → recession → mega-steepening) over the 1998-style one (re-hike → flattening). The labor market is what distinguishes them — which is Q1's argument.
+
+### A4. Files
+
+- `backtest_5s30s_easing_cycles.py` — dataset + cycle/tenor analytics (auto-upgrades to daily FRED CSVs when run with network access)
+- `carry_roll_tenor_comparison.py` — DV01 sizing and carry+roll by aged-par-bond repricing for 2s30s / 5s30s / 10s30s
+- `backtest_5s30s_results.csv` — full per-cycle, per-spread results
+- `5s30s_Backtest_TenorComparison.xlsx` — Dashboard, Cycle Backtest, Yield Data, Tenor Comparison (all formulas live; computed on open)
