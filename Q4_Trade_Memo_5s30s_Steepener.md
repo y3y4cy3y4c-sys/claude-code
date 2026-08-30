@@ -92,7 +92,20 @@ It loses only in **bear flattening** — hikes actually delivered *and* believed
 
 **Futures implementation** (no repo lines needed for the mock book): long **FV** (5y note future) vs short **WN** (Ultra Bond — deliverable remaining maturity ≥25y, so it tracks the 30y; the classic bond contract's 15–25y basket does not). Legs are sized **dynamically to equalize DV01 off the current cheapest-to-deliver securities and conversion factors** — CTD switches change the ratio, so no fixed contract ratio is quoted. Swap alternative: receive 5y SOFR / pay 30y SOFR, same DV01s, cleaner rolldown math, adds swap-spread basis.
 
-**Entry: 5s30s ≈ +75bp.** Friday's hawkish-speech reaction (2y up 6–11bp, long end *lower* — a bear-flattening) handed the trade a better entry than the +80bp of midweek. We are fading the market at a local extreme in hike pricing, not chasing steepening.
+**Entry: 5s30s ≈ +75–80bp (H.15 Aug 27 close: +81).** Friday's hawkish-speech reaction (2y up 6–11bp, long end *lower* — a bear-flattening) handed the trade a better entry than midweek. We are fading the market at a local extreme in hike pricing, not chasing steepening.
+
+**Entry, statistically** (monthly closes; `spread_stats_5s30s.py`, which upgrades itself to daily FRED data when run with network access):
+
+| Spread | Window | Current | Mean | Stdev | Z | Percentile | Min–Max | Δm vol |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| **5s30s** | **1y** | **81** | 96.4 | 12.0 | **−1.28** | **4%** | 81–110 | 5.0 |
+| 5s30s | 3y | 81 | 61.0 | 36.2 | +0.55 | 57% | 7–110 | 9.8 |
+| 2s30s | 1y | 95 | 107.3 | 9.6 | −1.28 | 4% | 95–125 | 7.2 |
+| 2s30s | 3y | 95 | 55.2 | 55.7 | +0.71 | 56% | −31–125 | 14.9 |
+| 10s30s | 1y | 52 | 56.8 | 4.0 | −1.21 | 12% | 52–65 | 4.7 |
+| 10s30s | 3y | 52 | 36.9 | 19.0 | +0.80 | 61% | 11–65 | 6.0 |
+
+The two windows tell one story. The 3-year Z (+0.55, 57th percentile) says the level is only mid-range — that window mixes the flat 2023–24 regime with the steep 2025 one, so no claim of generational flatness is available (or needed). The 1-year Z (**−1.28, 4th percentile — the flattest monthly close of the past year**) says the 2026 hike-repricing retraced roughly a quarter of the 2024–25 steepening (+7 in Apr-24 → +110 late-25 → +81 now), and *that retracement is what the entry buys*: a re-entry into an established steepening regime at its local flattest, not a chase. (Basis: month-end CMTs, Sep-23…Aug-26; 2023–25 reconstructed ±5–10bp, H1-2026 interpolated between documented anchors ±10–15bp, Aug-26 official H.15; monthly closes smooth intra-month extremes, so percentiles are conservative.)
 
 **Carry and rolldown — the trade pays you to wait:**
 
@@ -234,5 +247,6 @@ Reconstructed quarterly checkpoints from the historical record (underlying serie
 
 - `backtest_5s30s_easing_cycles.py` — dataset + cycle/tenor analytics (auto-upgrades to daily FRED CSVs when run with network access)
 - `carry_roll_tenor_comparison.py` — DV01 sizing and carry+roll by aged-par-bond repricing for 2s30s / 5s30s / 10s30s
+- `spread_stats_5s30s.py` — Z-scores / percentiles for the three spreads on 1y and 3y windows (monthly closes; auto-upgrades to daily FRED CSVs)
 - `backtest_5s30s_results.csv` — full per-cycle, per-spread results
 - `5s30s_Backtest_TenorComparison.xlsx` — Dashboard, Cycle Backtest, Yield Data, Tenor Comparison (all formulas live; computed on open)
