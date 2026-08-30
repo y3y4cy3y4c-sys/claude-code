@@ -2,7 +2,7 @@
 
 **Trade memo — as of Friday, August 28, 2026 (entry Monday, August 31)**
 
-**The trade: DV01-neutral 5s30s Treasury curve steepener — long 5y UST / short 30y UST, entered around +75–80bp (H.15 Aug 27 close: +81), initial target +110–120bp with a +150bp stretch, stop +45–50bp, 6–12 month horizon, positive carry.**
+**The trade: DV01-neutral 5s30s Treasury curve steepener — long 5y UST / short 30y UST, entered around +74–80bp (H.15 Aug 27 close: +81; Friday Aug 28 post-Warsh close ≈ +74), initial target +110–120bp with a +150bp stretch, stop +45–50bp, 6–12 month horizon, positive carry.**
 
 *(Revised Aug 29 after quant validation — see the Addendum at the end for the mechanics check, the 2s30s/5s30s/10s30s comparison, and the eight-cycle backtest behind the revised targets.)*
 
@@ -14,7 +14,7 @@ This memo is structured the way the assignment demands: the trade is not chosen 
 
 ### Q1 — The Fed's reaction function: hawkish words, constrained hands
 
-The surface reading of the Fed is hawkish. The July 28–29 FOMC held at **3.50–3.75%** on a 9–3 vote, with three regional presidents — Hammack (Cleveland), Kashkari (Minneapolis), Logan (Dallas) — dissenting **in favor of a hike**, the first unified three-way dissent in one direction since 2016. Chair Kevin Warsh, 100 days into the job after replacing Powell in May, used his first Jackson Hole keynote (Friday, Aug 28) to say inflation is running too high and the Fed may "have work to do," while refusing to give forward guidance. The front end repriced immediately: the 2y jumped ~6–11bp to ~4.30–4.34%, its highest in a month, and futures now put September hike odds around 30–38% (Polymarket is above 50%), with roughly one full hike priced cumulatively by end-2026.
+The surface reading of the Fed is hawkish. The July 28–29 FOMC held at **3.50–3.75%** on a 9–3 vote, with three regional presidents — Hammack (Cleveland), Kashkari (Minneapolis), Logan (Dallas) — dissenting **in favor of a hike**, the first unified three-way dissent in one direction since 2016. Chair Kevin Warsh, 100 days into the job after replacing Powell in May, used his first Jackson Hole keynote (Friday, Aug 28) to say inflation is running too high and the Fed may "have work to do," while refusing to give forward guidance. The front end repriced immediately: the 2y jumped ~12bp to close at 4.36% (10y 4.73, 30y just +2bp to 5.211 — a sharp bear-flattening), and futures now put September hike odds around 30–38% (Polymarket is above 50%), with roughly one full hike priced cumulatively by end-2026.
 
 The research conclusion from Q1 is that **this hawkishness is rhetoric the committee cannot convert into a sustained hiking cycle**, for three reasons:
 
@@ -54,7 +54,7 @@ Note the contrast with the naive version of this view. "The Fed will eventually 
 
 Two relative mispricings, and the asymmetry that ties them together:
 
-1. **The front end prices a phantom hiking cycle.** The 2y at 4.24% (4.31–4.36 post-speech) and 5y at 4.38% sit ~60–75bp above the funds midpoint (3.625%), embedding ~35% odds of a September hike and roughly a full hike by end-2026, with essentially no probability weight on the labor-driven cutting scenario within 12 months. Against –23k payrolls, falling participation, and 3.2% wage growth, that distribution is skewed the wrong way. You are being paid to fade it — at post-speech levels, at a local extreme in hike pricing.
+1. **The front end prices a phantom hiking cycle.** The 2y at 4.24% (4.36 at Friday's close) and 5y at 4.38% (~4.46 Friday) sit ~60–75bp above the funds midpoint (3.625%), embedding ~35% odds of a September hike and roughly a full hike by end-2026, with essentially no probability weight on the labor-driven cutting scenario within 12 months. Against –23k payrolls, falling participation, and 3.2% wage growth, that distribution is skewed the wrong way. You are being paid to fade it — at post-speech levels, at a local extreme in hike pricing.
 2. **The long end prices too little structural risk premium relative to the fiscal path** — or at minimum, no compression is on offer. At 5.19% (real yield 2.96%) the 30y is not "cheap to short" on level, but the flow backdrop (refinancing wall, fizzled buybacks, TGA gimmicks that *add* future supply) means its risks remain one-sided versus the front end. The point of shorting it here is not that it must sell off; it is that it **cannot rally far**, which is exactly what a curve trade needs from its short leg.
 3. **The asymmetry that ties them together.** No claim of logical inconsistency in market prices is needed — hike odds and 2.28% breakevens can coexist coherently (the market can expect a hike delivered precisely to keep medium-term expectations anchored). The trade's case is the asymmetry: *either weaker growth eventually removes the hike pricing, helping the 5y — or persistent inflation and fiscal pressure remain concentrated at the long end, hurting the 30y.* **Both resolutions steepen; only credible delivered tightening flattens.** That is what makes it a relative-value expression rather than a directional coin flip.
 
@@ -92,7 +92,7 @@ It loses only in **bear flattening** — hikes actually delivered *and* believed
 
 **Futures implementation** (no repo lines needed for the mock book): long **FV** (5y note future) vs short **WN** (Ultra Bond — deliverable remaining maturity ≥25y, so it tracks the 30y; the classic bond contract's 15–25y basket does not). Legs are sized **dynamically to equalize DV01 off the current cheapest-to-deliver securities and conversion factors** — CTD switches change the ratio, so no fixed contract ratio is quoted. Swap alternative: receive 5y SOFR / pay 30y SOFR, same DV01s, cleaner rolldown math, adds swap-spread basis.
 
-**Entry: 5s30s ≈ +75–80bp (H.15 Aug 27 close: +81).** Friday's hawkish-speech reaction (2y up 6–11bp, long end *lower* — a bear-flattening) handed the trade a better entry than midweek. We are fading the market at a local extreme in hike pricing, not chasing steepening.
+**Entry: 5s30s ≈ +74–80bp (H.15 Aug 27 close: +81; Friday Aug 28 close ≈ +74).** Friday's hawkish-speech reaction (2y +12bp to 4.36 while the 30y closed only +2bp at 5.211 — a sharp bear-flattening) handed the trade a better entry than midweek. We are fading the market at a local extreme in hike pricing, not chasing steepening. (Vendor spread quotes such as CNBC's 30Y5YS show the Friday on-the-run close and can sit 1–3bp from the CMT basis used here.)
 
 **Entry, statistically** (monthly closes; `spread_stats_5s30s.py`, which upgrades itself to daily FRED data when run with network access):
 
@@ -105,7 +105,7 @@ It loses only in **bear flattening** — hikes actually delivered *and* believed
 | 10s30s | 1y | 52 | 56.8 | 4.0 | −1.21 | 12% | 52–65 | 4.7 |
 | 10s30s | 3y | 52 | 36.9 | 19.0 | +0.80 | 61% | 11–65 | 6.0 |
 
-The two windows tell one story. The 3-year Z (+0.55, 57th percentile) says the level is only mid-range — that window mixes the flat 2023–24 regime with the steep 2025 one, so no claim of generational flatness is available (or needed). The 1-year Z (**−1.28, 4th percentile — the flattest monthly close of the past year**) says the 2026 hike-repricing retraced roughly a quarter of the 2024–25 steepening (+7 in Apr-24 → +110 late-25 → +81 now), and *that retracement is what the entry buys*: a re-entry into an established steepening regime at its local flattest, not a chase. (Basis: month-end CMTs, Sep-23…Aug-26; 2023–25 reconstructed ±5–10bp, H1-2026 interpolated between documented anchors ±10–15bp, Aug-26 official H.15; monthly closes smooth intra-month extremes, so percentiles are conservative.)
+The two windows tell one story. The 3-year Z (+0.55, 57th percentile) says the level is only mid-range — that window mixes the flat 2023–24 regime with the steep 2025 one, so no claim of generational flatness is available (or needed). The 1-year Z (**−1.28, 4th percentile — the flattest monthly close of the past year**) says the 2026 hike-repricing retraced roughly a quarter of the 2024–25 steepening (+7 in Apr-24 → +110 late-25 → +81 now), and *that retracement is what the entry buys*: a re-entry into an established steepening regime at its local flattest, not a chase. (Basis: month-end CMTs, Sep-23…Aug-26; 2023–25 reconstructed ±5–10bp, H1-2026 interpolated between documented anchors ±10–15bp, Aug-26 official H.15; monthly closes smooth intra-month extremes, so percentiles are conservative — at Friday's ≈+74 close the 1y Z is ≈ −1.9; the table anchors to the Aug-27 H.15 official value.)
 
 **Carry and rolldown — the trade pays you to wait:**
 

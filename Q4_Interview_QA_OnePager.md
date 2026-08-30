@@ -1,7 +1,7 @@
 # The Steepener Defense — Interview Q&A (one page)
 
 **5s30s DV01-neutral steepener · as of Aug 27–28, 2026**
-Entry **+75–80bp** (H.15 8/27: +81) · Initial target **+110–120** · Stretch **+150** · Stop **+45–50** · DV01 **$20k/bp** per leg · Carry **modest +** · Risk at stop **0.6% NAV** · 1y Z **−1.3** / percentile **4%** (flattest of past year)
+Entry **+74–80bp** (Fri 8/28 close ≈ +74 · H.15 8/27: +81) · Initial target **+110–120** · Stretch **+150** · Stop **+45–50** · DV01 **$20k/bp** per leg · Carry **modest +** · Risk at stop **0.6% NAV** · 1y Z **−1.3** / percentile **4%** (flattest of past year)
 
 > Framing note: main answers deliberately use the relative-value formulation — the research memo's stronger language ("phantom hiking cycle", "fiscal dominance") is toned down here by design. Numbers below the line are follow-up ammunition, not the lead.
 
@@ -51,7 +51,7 @@ Risk-budget sizing: 0.6% of NAV at a −30bp stop → $20k/bp curve DV01 (daily 
 
 **Q10 — The curve already steepened 100bp since 2024 — aren't you late?**
 "On a three-year window the spread is only mid-range — Z +0.5, 57th percentile — because that window mixes the flat 2023–24 regime with the steep 2025 one. But on a one-year window it sits at the flattest level of the past year: Z −1.3, bottom five percent. The 2026 hike-repricing retraced about a quarter of the 2024–25 steepening, and that retracement is what I'm buying — a re-entry into an established regime, not a chase."
-*If pushed:* 5s30s monthly closes +7 (Apr-24) → +110 (late-25) → +81 now; 1y mean 96.4, σ 12.0. Same picture in 2s30s (Z −1.3) and 10s30s (Z −1.2) — the whole curve flattened on hike bets. Stats: `spread_stats_5s30s.py`.
+*If pushed:* 5s30s +7 (Apr-24) → +110 (late-25) → +81 (8/27 H.15) → ≈+74 Friday close (1y Z ≈ −1.9 at that level); 1y mean 96.4, σ 12.0. Same picture in 2s30s and 10s30s — the whole curve flattened on hike bets. Stats: `spread_stats_5s30s.py`.
 
 **Q11 — How do you implement it, and what's the event path?**
 Cash 5y/30y, or futures: long FV against short Ultra Bond (its ≥25y deliverable basket tracks the 30y; the classic contract's 15–25y basket doesn't), "sized dynamically to equalize DV01 off the current cheapest-to-deliver"; swap version: receive 5y / pay 30y SOFR. Path: Sep 4 payrolls, Sep 10 CPI, Sep 15–16 FOMC — watch the dissent composition more than the decision — then Q4 refunding and the December FOMC. Hike-premium repricing is a 1–4-month story; the cut-pricing and fiscal legs run 6–12 months, funded by the carry.
