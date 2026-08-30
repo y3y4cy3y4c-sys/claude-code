@@ -30,7 +30,7 @@ July core PCE held at **3.3% y/y** (headline **3.7%**), hotter than expected, an
 
 **Q2 conclusion: inflation grinds from the mid-3s toward the high-2s as the energy shock fades and labor income weakens — but it does not return to 2% on any near horizon**, because the tariff level-shift is still passing through, the Hormuz risk premium can reignite, and (per Q1) the Fed will not impose the demand destruction required to force it there. Sticky-3s, drifting slowly lower. Neither the hawks' spiral nor a clean glide to target.
 
-### Q3 — Fiscal, supply, and the long end: fiscal dominance is no longer a thesis, it's the news flow
+### Q3 — Fiscal, supply, and the long end: structural pressure is no longer a thesis, it's the news flow
 
 This was the structural leg of the research, and 2026 has made it explicit:
 
@@ -38,25 +38,25 @@ This was the structural leg of the research, and 2026 has made it explicit:
 - Treasury's response was not to term out less — the August refunding still sold $125bn including $25bn of 30y — but to **buy its own long bonds**: Secretary Bessent doubled long-end liquidity-support buybacks to at least **$4bn per operation** ($69bn total Aug 6–Nov 5, upsized long-end operations beginning Sept 9), and is floated in the press as considering tapping the ~$1T Treasury General Account to fund more.
 - Each buyback-driven rally in the long end has **fizzled within days** — the Aug 19 rally was fully retraced by Aug 21. The flow problem (issuance + maturing stock) overwhelms the buyback capacity.
 
-A fiscal authority conducting yield-curve control on its own debt while the central bank's independence is under open political pressure is the textbook fiscal-dominance configuration. It puts a **floor under long-end yields** (supply + term premium + inflation risk premium) that is independent of the Fed's front-end path.
+Treasury frames the buybacks as liquidity support, not yield management — but their timing and upsizing around long-end selloffs show how sensitive the fiscal authority has become to long-end yields, and they have not held the level. The point is not a fiscal crisis: fiscal supply, real term premium and structural demand for capital (an AI investment boom raises long real rates even when it is productive) are increasingly what the 30y prices, over and above the Fed's path.
 
-**Q3 conclusion: the long end stays elevated — roughly 5%+ on the 30y — whatever the Fed does at the front end, and its risks skew toward further term-premium widening, not compression.**
+**Q3 conclusion: relative to the 5y, the 30y's ability to *rally* is constrained by supply, term premium and capital demand — its risks skew toward staying elevated, with further term-premium widening the fatter tail.**
 
 ---
 
 ## 2. VIEW
 
-> **The Warsh Fed's hawkishness is rhetoric that a contracting labor market and the committee's politics will not let become delivered hikes; the front end's next durable repricing is toward cuts. Meanwhile fiscal dominance — deficits, a refinancing wall, and Treasury buying back its own long bonds — keeps the long end structurally elevated regardless of the policy path. Post-Jackson-Hole pricing (~35% September hike, ~one hike by year-end, 5s30s flattened to ~+75bp) is on the wrong side of both.**
+> **The market may be overpricing the persistence of Fed hawkishness — a contracting labor market and a divided committee argue the hawkish path erodes — while underpricing the persistence of structural pressure at the long end, where fiscal supply, term premium and capital demand increasingly set the price. The claim is not that the Fed is wrong; it is that the *relative* pricing of the 5y versus the 30y is wrong, and post-Jackson-Hole (~35% September hike priced, 5s30s flattened to ~+75–80bp) is an attractive level to take the other side.**
 
 Note the contrast with the naive version of this view. "The Fed will eventually ease, but fiscal pressure keeps the long end elevated" was easy to say a year ago when the Fed was already cutting. Today the same *structural* view has a much better *entry*: the market has swung all the way to pricing **hikes**, so the front leg of the trade is no longer "how fast do cuts come" but "does the hiking cycle that is now priced actually exist" — a cheaper, more falsifiable bet.
 
 ## 3. MISPRICING
 
-Three related mispricings, one of which is an outright internal inconsistency in market pricing:
+Two relative mispricings, and the asymmetry that ties them together:
 
 1. **The front end prices a phantom hiking cycle.** The 2y at 4.24% (4.31–4.36 post-speech) and 5y at 4.38% sit ~60–75bp above the funds midpoint (3.625%), embedding ~35% odds of a September hike and roughly a full hike by end-2026, with essentially no probability weight on the labor-driven cutting scenario within 12 months. Against –23k payrolls, falling participation, and 3.2% wage growth, that distribution is skewed the wrong way. You are being paid to fade it — at post-speech levels, at a local extreme in hike pricing.
 2. **The long end prices too little structural risk premium relative to the fiscal path** — or at minimum, no compression is on offer. At 5.19% (real yield 2.96%) the 30y is not "cheap to short" on level, but the flow backdrop (refinancing wall, fizzled buybacks, TGA gimmicks that *add* future supply) means its risks remain one-sided versus the front end. The point of shorting it here is not that it must sell off; it is that it **cannot rally far**, which is exactly what a curve trade needs from its short leg.
-3. **The internal inconsistency — the cleanest tell.** The front end prices hikes *because inflation won't come down*; 5y TIPS breakevens at **2.28%** (10y: 2.32%) price average CPI collapsing to ~2.3% *starting from 3.4% with disinflation stalled*. Both cannot be true. Either inflation persists (breakevens are too low, and eventual policy will be too easy — long-end-bearish) or inflation rolls over because the economy rolls over (the hike pricing dies and the front end rallies hard). **The 5s30s steepener collects in both resolutions.** That is what makes it the internally consistent trade rather than a directional coin flip.
+3. **The asymmetry that ties them together.** No claim of logical inconsistency in market prices is needed — hike odds and 2.28% breakevens can coexist coherently (the market can expect a hike delivered precisely to keep medium-term expectations anchored). The trade's case is the asymmetry: *either weaker growth eventually removes the hike pricing, helping the 5y — or persistent inflation and fiscal pressure remain concentrated at the long end, hurting the 30y.* **Both resolutions steepen; only credible delivered tightening flattens.** That is what makes it a relative-value expression rather than a directional coin flip.
 
 ## 4. INSTRUMENT — derived by elimination, not picked
 
@@ -77,7 +77,7 @@ Why the curve dominates the outright: a DV01-neutral steepener is long the front
 - **Bull steepening** (base case): hike pricing bleeds out, labor keeps softening, cuts get priced → 5y rallies hard, 30y anchored by supply.
 - **Bear steepening** (stagflation escalation): Hormuz stays shut, oil re-spikes, Fed under-reacts (per Q1) → inflation/term premium hits the 30y hardest.
 
-It loses only in **bear flattening** — hikes actually delivered *and* believed, restoring credibility and compressing term premium — which is precisely the scenario Q1's research rejects. The trade is therefore a pure, falsifiable expression of the research: if the political appointees vote for hikes into negative payrolls, the thesis was wrong and the position is stopped out. One structural note: 5s over 2s for the long leg because if the Fed simply holds forever, the 2y is pinned near funds (~60bp of rally, capped) while the 5y reprices the whole path; 5s30s rather than 10s30s because dropping the front leg would discard the Q1 alpha and keep only the crowded term-premium short.
+It loses only in **bear flattening** — hikes actually delivered *and* believed, restoring credibility and compressing term premium — which is precisely the scenario Q1's research rejects. The trade is therefore a pure, falsifiable expression of the research: if the political appointees vote for hikes into negative payrolls, the thesis was wrong and the position is stopped out. One structural note: 5s over 2s for the long leg because the 2y is dominated by the next few FOMC meetings, whereas the 5y has more exposure to how the entire medium-term policy path reprices over the 6–12-month horizon — the repricing this thesis is actually about; 5s30s rather than 10s30s because dropping the front leg would discard the Q1 alpha and keep only the crowded term-premium short.
 
 ## 5. TRADE SPECIFICATION
 
@@ -146,7 +146,7 @@ Scenario tree, 6–12 month horizon, from +75bp entry (curve P&L at $20k/bp; car
 
 1. **A Board governor votes to hike.** The Q1 argument rests on the hike faction being regional presidents only. If Bowman, Waller, Miran — or Warsh himself forcing a vote — deliver a Board majority for a hike into negative payrolls, the political-constraint premise is dead. Exit.
 2. **Labor re-accelerates.** Two consecutive payroll prints >+150k with participation recovering, or AHE back above ~3.5% y/y, kills the "no spiral, labor cracking" leg. Exit or halve.
-3. **Term premium genuinely compresses.** If long-end rallies *stop fizzling* — 30y sustainably through ~4.90% absent a hard-landing panic — the fiscal-dominance floor (Q3) is failing and the short leg is wrong.
+3. **Term premium genuinely compresses.** If long-end rallies *stop fizzling* — 30y sustainably through ~4.90% absent a hard-landing panic — the structural supply floor (Q3) is failing and the short leg is wrong.
 
 **Known hazards that are *not* falsifiers (manage, don't exit):**
 
@@ -159,7 +159,7 @@ Scenario tree, 6–12 month horizon, from +75bp entry (curve P&L at $20k/bp; car
 
 ## 9. The alternative the research also supports — and why it's the complement, not the core
 
-The same three conclusions justify **long 5y TIPS breakevens at 2.28%**: a politically constrained Fed easing into 3%+ inflation is the textbook breakeven-widening regime, and the carry is enormous (TIPS accrue realized CPI at 3.4% vs. 2.28% priced ≈ +110bp/yr if inflation merely stays put). It is arguably the *purer* expression of Mispricing #3.
+The same three conclusions justify **long 5y TIPS breakevens at 2.28%**: a politically constrained Fed easing into 3%+ inflation is the textbook breakeven-widening regime, and the carry is enormous (TIPS accrue realized CPI at 3.4% vs. 2.28% priced ≈ +110bp/yr if inflation merely stays put). It is the purest expression of the view that inflation settles in the high-2s rather than gliding back to 2% — a standalone bet on Q2's conclusion.
 
 It is not the core position for one reason: **scenario B.** The hard-landing outcome that Q1's labor data makes live (–23k payrolls) is the scenario where breakevens historically collapse (5y BE reached ~0% in 2008 and 2020) — and it is simultaneously the steepener's best scenario. The steepener wins in A, B, and C; breakevens win in A and C but die in B. A book running both (e.g., 2/3 steepener, 1/3 breakevens) is better diversified across the inflation axis, but forced to one instrument per the assignment, the steepener is the internally consistent choice — it is the only expression on the menu that does not require taking a side on the one question the research left genuinely open (does the labor crack become a recession?).
 
